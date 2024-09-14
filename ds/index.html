@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptara - Data Structures</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="top-strip">
+            <div class="menu-icon" onclick="toggleTitles()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="home-icon" onclick="showDefaultContent()">
+                <!-- You can use an actual icon here or just text -->
+                <span>🏠</span> <!-- Example using an emoji as the home icon -->
+            </div>
+            <div class="theme-icon" onclick="toggleTheme()">☀️</div> <!-- Represents dark theme initially -->
+            <h1>Data Structures</h1>
+        </div>
+
+
+        <div class="titles" id="titles">
+            <ul>
+                <li onclick="showContent('default-content')">Introduction</li>
+                <li onclick="showContent('arrays-content')">Arrays</li>
+                <li onclick="showContent('linked-lists-content')">Linked Lists</li>
+                <li onclick="showContent('stacks-content')">Stacks</li>
+                <li onclick="showContent('queues-content')">Queues</li>
+                <li onclick="showContent('trees-content')">Trees</li>
+                <li onclick="showContent('graphs-content')">Graphs</li>
+                <li onclick="showContent('heaps-content')">Heaps</li>
+                <li onclick="showContent('hashtables-content')">Hash Tables</li>
+            </ul>
+        </div>
+
+        <div class="content" id="default-content">
+            <img src="" alt="Java Programming">
+            <h2>Introduction to Data Structures</h2>
+            <p>Data structures are fundamental components of computer science and programming that are used to organize and store data in a way that allows 
+                for efficient retrieval, manipulation, and management. They serve as the building blocks for designing and implementing algorithms and are 
+                crucial in solving various computational problems. Here's an introduction to data structures, including what they are and why they are 
+                important!
+            </p>
+            
+            <h3>What are Data Structures?</h3>
+            
+            <p>Data structures are specialized formats or arrangements used to store and organize data in a computer's memory or storage. They define how data 
+                is stored, accessed, and manipulated. Think of them as containers that hold data elements, and the choice of data structure depends on the 
+                specific needs and requirements of a particular task or problem.
+            </p>    
+            
+            <h3>Why are Data Structures Important?</h3>
+            
+            <p>Data structures are essential for several reasons:</p>
+            <ul>
+                <li><b>Efficiency</b> Choosing the right data structure can significantly impact the efficiency of operations performed on the data. 
+                    Well-designed data structures can optimize memory usage and reduce the time it takes to perform common tasks like searching, sorting, and 
+                    inserting or deleting elements.
+                </li>
+                <li><b>Abstraction</b>: Data structures provide a level of abstraction that simplifies programming. They allow developers to work with data 
+                    at a higher level of understanding, making it easier to manage complex data sets and algorithms.
+                </li>
+                <li><b>Problem Solving</b>: Many computational problems involve organizing and manipulating data. Data structures provide a systematic way to 
+                    represent and work with data, making it easier to design and implement algorithms to solve these problems.
+                </li>
+                <li><b>Reusability</b>: Once you've implemented a data structure, you can reuse it in various parts of your code or in different projects, 
+                    reducing duplication of effort and improving code maintainability.
+                </li>
+                <li><b>Scalability</b>: Well-chosen data structures can handle data of varying sizes efficiently. This is crucial when working with large 
+                    datasets or applications that need to scale.
+                </li>
+            </ul>
+            
+            <h3>Common Types of Data Structures</h3>
+            
+            <p>There are numerous data structures, each designed for specific use cases. Some common data structures include:</p>
+            <ul>
+                <li><b>Arrays</b>: Ordered collections of elements with a fixed size.</li>
+                <li><b>Linked Lists<b>: A sequence of nodes, where each node contains data and a reference to the next node.</li>
+                <li><b>Stacks</b>: A linear data structure that follows the Last-In-First-Out (LIFO) principle.</li>
+                <li><b>Queues</b>: A linear data structure that follows the First-In-First-Out (FIFO) principle.</li>
+                <li><b>Trees</b>: Hierarchical structures with nodes connected by edges, commonly used in hierarchical data representations and searching
+                     algorithms.
+                </li>     
+                <li><b>Graphs</b>: A collection of nodes connected by edges, used for modeling complex relationships between data points.</li>
+                <li><b>Heaps</b>: A specialized tree-based data structure that satisfies the heap property, which ensures that the parent node has a specific 
+                    relationship with its child nodes. Heaps are commonly used in priority queues and sorting algorithms like heapsort.
+                </li>
+                <li><b>Hash Tables</b>: Data structures that use a hash function to map keys to values, allowing for efficient key-value pair storage and 
+                    retrieval. They are also known as hash maps or dictionaries and are widely used in various applications like caching, indexing, and data 
+                    storage.
+                </li>
+            </ul>
+            
+            <h3>Choosing the Right Data Structure</h3>
+            <p>Selecting the appropriate data structure depends on the specific problem you're trying to solve. Factors to consider include the type of data, 
+                the operations you need to perform, memory constraints, and time complexity requirements.</p>            
+        </div>
+
+        <div class="content" id="arrays-content" style="display: none;">
+            <h2>Arrays</h2>
+            <h3>Definition</h3> 
+
+            <p>An array is an ordered collection of elements, each of which is identified by an index or a key. It is a linear data structure where elements 
+                are stored sequentially in memory, and each element has a unique position or index. Arrays have a fixed size, which means the number of 
+                elements they can hold is predetermined when they are created.
+            </p>
+
+            <h3>Characteristics and Properties</h3>
+            <ul>
+                <li><b>Fixed Size</b>: Arrays have a fixed size determined when they are declared or initialized. This size cannot be changed during the 
+                    lifetime of the array.
+                </li>
+                <li><b>Contiguous Memory</b>: Array elements are stored in contiguous memory locations. This property allows for efficient random access 
+                    based on index.
+                </li>    
+                <li><b>Index-Based</b>: Elements in an array are accessed and manipulated using their index, which starts from 0 for the first element and 
+                    goes up to n-1 for an array of size n.
+                </li>    
+                <li><b>Homogeneous</b>: Arrays typically hold elements of the same data type, although some programming languages may allow mixed types.</li>
+            </ul>
+
+            <h3>Operations</h3>
+            <ul>
+                <li><b>Access</b>: Accessing an element in an array by its index is a constant-time operation, O(1).</li>
+                <li><b>Insertion and Deletion</b>: Inserting or deleting an element in an array may require shifting other elements, which can be a 
+                    time-consuming operation, O(n) in the worst case.
+                </li>
+                <li><b>Search</b>: Searching for an element in an unsorted array requires a linear search, O(n) in the worst case. If the array is sorted, 
+                    binary search can be applied, reducing the complexity to O(log n).
+                </li>
+            </ul>
+
+            <h3>Use Cases</h3>
+
+            <p>Arrays are used when you need constant-time access to elements by their index. They are suitable for storing and manipulating ordered data, 
+                such as lists, vectors, or sequences. Arrays are a fundamental building block for implementing more complex data structures like matrices, 
+                strings, and dynamic arrays (e.g., ArrayList in Java).</p>
+
+            <h3>Examples of Array Types</h3>
+            <ul>
+                <li><b>One-Dimensional Array</b>: A simple array where elements are arranged in a single row or column.</li>
+                <li><b>Multi-Dimensional Array</b>: An array of arrays, used to represent tables, grids, or multi-dimensional data structures.</li>
+                <li><b>Static Array</b>: An array with a fixed size that cannot be changed after creation.</li>
+                <li><b>Dynamic Array</b>: An array-like structure that can dynamically resize itself when needed, such as Python's list or Java's ArrayList.</li>
+            </ul>
+
+            <h3>Advantages</h3>
+            <ul>
+                <li>Fast and efficient for direct access to elements by index.</li>
+                <li>Simple to implement and widely supported in programming languages.</li>
+                <li>Well-suited for scenarios where the size of the collection is known in advance.</li>
+            </ul>
+
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Fixed size can be limiting if the number of elements varies significantly.</li>
+                <li>Insertions and deletions at arbitrary positions can be slow due to element shifting.</li>
+                <li>Memory may be wasted if the array's size is much larger than the actual number of elements it holds.</li>
+            </ul>
+        
+        </div>
+
+        <div class="content" id="linked-lists-content">
+            <h2>Linked List</h2>
+            <h3>Definition</h3> 
+
+            <p>A linked list is a linear data structure consisting of a sequence of elements called nodes. Each node contains two parts: data and a reference 
+                (or link) to the next node in the sequence. Linked lists are dynamic data structures, meaning they can grow or shrink in size during runtime, 
+                unlike arrays, which have a fixed size.
+            </p>    
+
+            <h3>Characteristics and Properties</h3>
+            <ul>
+                <li><b>Dynamic Size:</b> Linked lists can dynamically grow or shrink, making them suitable for situations where the size of the data collection 
+                    is not known in advance.
+                </li>
+                <li><b>Non-contiguous Memory:</b> The elements in a linked list are not stored in contiguous memory locations. Each node contains data and a 
+                    reference to the next node, allowing for flexible memory allocation.
+                </li>
+                <li><b>Node Structure:</b> Each node in a linked list typically consists of two parts: data (the value or element) and a reference (often 
+                    called a pointer) to the next node in the sequence. The last node typically points to null, indicating the end of the list.
+                </li>
+                <li><b>Variants:</b> There are different types of linked lists, including singly linked lists (each node has a reference to the next node), 
+                    doubly linked lists (each node has references to both the next and previous nodes), and circular linked lists (where the last node points 
+                    back to the first node, forming a loop).
+                </li>
+            </ul>
+            
+            
+            <h3>Operations</h3>
+            <ul>
+                <li><b>Access:</b> Accessing elements in a linked list requires traversing the list from the beginning (head) to the desired element, which 
+                    takes O(n) time in the worst case.
+                </li>
+                <li><b>Insertion and Deletion</b> Inserting or deleting an element in a linked list typically involves changing references, making these 
+                    operations efficient, often taking O(1) time, if you have a reference to the node.
+                </li>
+                <li><b>Search</b> Searching for an element in an unsorted linked list also requires traversing the list, resulting in a time complexity of 
+                    O(n). However, in a sorted linked list, binary search can be applied, reducing the complexity to O(log n).
+                </li>
+            </ul> 
+
+            <h3>Use Cases</h3>
+            <p>Linked lists are suitable when you need to efficiently insert or delete elements within a collection, especially when the size is variable. 
+                They are used in various data structures like stacks, queues, and symbol tables. Linked lists are often used to implement other data 
+                structures, such as dynamic memory allocation in many programming languages (e.g., C's malloc).
+            </p>
+
+            <h3>Advantages</h3>
+            <ul>
+                <li>Efficient insertions and deletions, especially at the beginning or end of the list.</li>
+                <li>Dynamic sizing allows for efficient memory usage as the list can grow or shrink as needed.</li>
+                <li>Suitable for implementing other data structures, such as stacks and queues.</li>
+            </ul>
+
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Slower access times compared to arrays, especially for random access.</li>
+                <li>Increased memory overhead due to the need for node references.</li>
+                <li>Traversing linked lists can be slower than accessing elements directly in arrays for certain operations.</li>
+            </ul>
+
+         </div>
+
+        <div class="content" id="stacks-content">
+            <h2>Stacks</h2>
+            <h3>Definition</h3>
+            <p>A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. In a stack, elements are added and removed from the 
+                same end, known as the "top" of the stack. It's like a collection of items stacked on top of each other, and you can only interact with the 
+                top item.
+            </p>    
+
+            <h3>Characteristics and Properties</h3>
+            <ul>
+                <li><b>LIFO Principle:</b> The last element added to the stack is the first one to be removed. Think of it as a stack of plates; you can only 
+                    remove the top plate without disturbing the ones below.
+                </li>
+                <li><b>Operations:</b>Stacks typically support two main operations: push (to add an element to the top of the stack) and pop (to remove the 
+                    top element from the stack).
+                </li>
+                <li><b>Single-End Access:</b> In addition to push and pop, stacks may offer other operations like peek (to view the top element without 
+                    removing it) and isEmpty (to check if the stack is empty).
+                </li>
+            </ul>
+
+            <h3>Use Cases</h3>
+            <ul>
+                <li>Stacks are commonly used in situations where the order of processing or data retrieval is critical, such as function call management 
+                    (the call stack) and expression evaluation (postfix notation).
+                </li>
+                <li>They are used to track state or undo/redo functionality in applications.</li>
+                <li>Stacks can be used for parsing and syntax checking in compilers and interpreters.</li>
+            </ul>
+
+            <h3>Advantages</h3>
+            <ul>
+                <li>Simple and efficient for managing elements in a last-in-first-out order.</li>
+                <li>Well-suited for implementing algorithms and data structures that require tracking state changes or processing in a specific order.</li>
+                <li>Minimal operations make them easy to use and understand.</li>
+            </ul>
+
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Limited functionality compared to more complex data structures like queues and lists.</li>
+                <li>Not suitable for situations that require access to elements in the middle or arbitrary positions.</li>
+            </ul>
+
+            <h3>Implementations</h3>
+            <p>Stacks can be implemented using arrays or linked lists, where the top element corresponds to the end of the array or the head of the linked 
+                list. Some programming languages provide built-in stack data structures or offer stack-related functionality in their standard libraries
+            </p>
+
+            <p><b>Example Scenarios:</b></p>
+            <ul>
+                <li><b>Function Calls:</b> In programming languages, function calls are typically managed using a call stack. When a function is called, its 
+                    state is pushed onto the stack, and when it returns, its state is popped off the stack.
+                </li>
+                <li><b>Expression Evaluation:</b> Stacks can be used to convert infix expressions to postfix (Reverse Polish Notation) and then evaluate them 
+                    efficiently.</li>
+            </ul>
+ 
+        </div>
+
+        <div class="content" id="queues-content">
+            <h2>Queues</h2>
+            <h3>Definition</h3>
+            <p>A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. In a queue, elements are added at one end (the "rear" 
+                or "enqueue" end) and removed from the other end (the "front" or "dequeue" end). It's like a line of people waiting, where the person who 
+                arrives first is served first.</p>
+
+            <h3>Characteristics and Properties</h3>    
+            <ul>
+                <li><b>FIFO Principle: </b>The first element added to the queue is the first one to be removed. This ensures that elements are processed or 
+                    served in the order they arrive.
+                </li>
+                <li><b>Operations: </b>Queues typically support two main operations: enqueue (to add an element to the rear of the queue) and dequeue (to 
+                    remove an element from the front of the queue).
+                </li>
+                <li><b>Front and Rear: </b>Queues have a front and a rear pointer that indicate the positions for enqueue and dequeue operations.
+                </li>
+                <li><b>Other Operations: </b>In addition to enqueue and dequeue, queues may offer operations like peek (to view the front element without 
+                    removing it) and isEmpty (to check if the queue is empty).
+                </li>
+            </ul>
+
+            <h3>Use Cases</h3>
+            <p>Queues are used in scenarios where elements need to be processed in a specific order, such as task scheduling, print job management, and data 
+                buffering.<br>
+                They are commonly used in multi-threading and parallel processing to manage shared resources.<br>
+                Queues can be used for implementing breadth-first search in graph algorithms.</p>
+
+            <h3>Advantages</h3>    
+            <ul>
+                <li>Ensures fairness and order in processing elements.</li>
+                <li>Well-suited for scenarios where tasks or data must be processed in the order they arrive.</li>
+                <li>Provides a simple and efficient way to manage data flow in various applications.</li>
+            </ul>
+
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Limited functionality compared to more complex data structures like linked lists or arrays.</li>
+                <li>Not suitable for situations that require access to elements in the middle or arbitrary positions.</li>
+            </ul>
+
+            <h3>Implementations:</h3>
+            <p>Queues can be implemented using arrays, linked lists, or specialized queue data structures, depending on the specific use case and requirements.
+            Some programming languages provide built-in queue data structures or offer queue-related functionality in their standard libraries.
+            </p>
+            <p>
+                <b>Example Scenarios:</b>
+                <ul>
+                    <li><b>Print Queue: </b>In a printer, print jobs are managed using a queue. Jobs are added to the rear of the queue and processed in the 
+                        order they are received.
+                    </li>
+                    <li><b>Task Scheduling: </b>In an operating system or task scheduler, processes or threads waiting for execution are managed in a queue, 
+                        ensuring that each gets its fair share of CPU time.</li>
+                </ul>
+            </p>
+
+        </div>
+
+        <div class="content" id="trees-content">
+            <h2>Trees</h2>
+            <h3>Definition</h3>
+            <p>A tree is a hierarchical data structure that consists of nodes connected by edges. It is a collection of elements where one element, called the 
+                "root," serves as the starting point, and each node can have zero or more child nodes. Nodes in a tree are organized into levels, with the root 
+                at level 0, and edges represent the relationships between nodes.
+            </p>    
+
+            <h3>Characteristics and Properties</h3>
+            <ul>
+                <li><b>Root: </b>The topmost node in the tree is called the root. It serves as the starting point for accessing other nodes in the tree.</li>
+                <li><b>Node: </b>Each element in the tree is a node, which contains data and may have references to its child nodes.</li>
+                <li><b>Parent and Child: </b>Nodes in a tree have parent-child relationships, where a node's parent is the node from which it is descended, 
+                    and its children are the nodes descended from it.
+                </li>
+                <li><b>Leaves: </b>Nodes that have no children are called leaves or leaf nodes.</li>
+                <li><b>Depth and Height: </b>The depth of a node is the length of the path from the root to that node. The height of the tree is the maximum 
+                    depth of any node.
+                </li>
+                <li><b>Binary Trees: </b>A special type of tree where each node has at most two children is called a binary tree.</li>
+                <li><b>Balanced Trees: </b>Trees where the heights of subtrees are approximately balanced are known as balanced trees. Examples include AVL 
+                    trees and Red-Black trees.
+                </li>
+            </ul>
+
+            <h3>Operations</h3>
+            <ul>
+                <li><b>Traversal: </b>Trees can be traversed in various ways, including in-order, pre-order, and post-order traversal. These operations allow 
+                    you to visit and process each node in a specific order.
+                </li>
+                <li><b>Search: </b>Trees can be searched for a specific node or value efficiently using various algorithms, such as binary search in binary 
+                    search trees (BSTs).
+                </li>
+                <li><b>Insertion and Deletion: </b>Nodes can be inserted or deleted from a tree, with different strategies depending on the type of tree and 
+                    the desired outcome.
+                </li>
+            </ul>
+
+            <h3>Use Cases</h3>
+            <ul>
+                <li>Trees are used for hierarchical data representation, such as file systems, organization charts, and XML/HTML document structures.</li>
+                <li>Binary search trees (BSTs) are used for efficient searching and sorting of data.</li>
+                <li>Balanced trees, like AVL trees, are used for maintaining balanced data structures for efficient insertion and retrieval.</li>
+            </ul>
+
+            <h3>Advantages</h3>
+            <ul>
+                <li>Efficient for representing hierarchical data with parent-child relationships.</li>
+                <li>Provides a foundation for various advanced data structures and algorithms.</li>
+                <li>Efficient for searching and sorting when properly balanced.</li>
+            </ul>
+
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Requires careful management to maintain balance and prevent degeneration into a linked list (in the case of unbalanced trees).</li>
+                <li>Insertion and deletion operations can be complex and may require rebalancing in some cases.</li>
+            </ul>
+
+            <h3>Implementations</h3>
+            <p>Trees can be implemented using various programming constructs, such as classes and pointers, in languages like C++, Java, and Python. 
+                Specialized tree structures, like binary search trees and AVL trees, are implemented with specific rules and algorithms for maintaining balance.
+            </p>
+
+            <p>
+                <b><u>Example Scenarios</u></b> <br>
+                <b>File Systems</b>: The hierarchical structure of directories and files in a computer's file system is often represented as a tree.<br>
+                <b>Organizational Charts</b>: Hierarchical representation of an organization's structure, with each employee represented as a node and their 
+                relationships as edges.<br>
+                <b>Binary Search Trees</b>: Used in databases and search engines for efficient data retrieval.
+            </p>
+
+        </div>
+
+        <div class="content" id="graphs-content">
+            <h2>Graphs</h2>
+            <h3>Definition</h3>
+            <p>A graph is a non-linear data structure that consists of a collection of nodes (vertices) connected by edges. Graphs can represent various 
+                relationships or connections between objects, and they are a versatile way to model complex networks or systems. Graphs can be both directed 
+                (edges have a direction) and undirected (edges have no direction).
+            </p>    
+
+            <h3>Characteristics and Properties</h3>
+            <ul>
+                <li><b>Nodes (Vertices): </b>Nodes represent individual elements or entities within the graph.</li>
+                <li><b>Edges: </b>Edges represent connections or relationships between nodes. Edges can have attributes like weights to represent the strength 
+                    or cost of a connection.
+                </li>
+                <li><b>Directed vs. Undirected: </b>In directed graphs (digraphs), edges have a direction, meaning they go from one node (the source or tail) 
+                    to another (the destination or head). In undirected graphs, edges have no direction and simply connect two nodes without a source or 
+                    destination.
+                </li>
+                <li><b>Degree: </b>The degree of a node is the number of edges connected to it. In directed graphs, nodes have both an in-degree (incoming 
+                    edges) and an out-degree (outgoing edges).
+                </li>
+                <li><b>Cycles: </b>A cycle is a path in the graph that starts and ends at the same node, indicating a closed loop.</li>
+            </ul>
+
+            <h3>Operations</h3>
+            <ul>
+                <li><b>Traversal: </b>Graphs can be traversed using various algorithms like depth-first search (DFS) and breadth-first search (BFS) to explore 
+                    nodes and edges.
+                </li>
+                <li><b>Shortest Path: </b>Finding the shortest path between two nodes in a weighted graph is a common graph operation. Dijkstra's algorithm 
+                    and the Bellman-Ford algorithm are examples of algorithms for this purpose.
+                </li>
+                <li><b>Connectivity: </b>Determining whether the graph is connected (i.e., there is a path between any pair of nodes) is another important 
+                    operation.
+                </li>
+                <li><b>Topological Sorting: </b>In directed acyclic graphs (DAGs), finding a linear ordering of nodes such that for every directed edge (u, v), 
+                    node u comes before node v in the ordering.
+                </li>
+            </ul>
+
+            <h3>Use Cases</h3>
+            <ul>
+                <li>Graphs are used to model and analyze various real-world scenarios, including social networks, transportation networks, computer networks, 
+                    and dependency graphs.
+                </li>
+                <li>They are fundamental in solving problems related to shortest path algorithms, network flow, and routing.</li>
+                <li>Graphs are used in computer science for representing data structures like trees, linked lists, and hash tables.</li>
+            </ul>
+
+            <h3>Advantages</h3>
+            <ul>
+                <li>Versatile and powerful for modeling complex relationships and networks.</li>
+                <li>Applicable to a wide range of real-world problems, from social networks to route planning.</li>
+                <li>Serve as a foundation for various algorithms and data structures.</li>
+            </ul>
+
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>More complex than linear data structures like arrays and lists.</li>
+                <li>Algorithms on large graphs can be computationally expensive.</li>
+            </ul>
+
+            <h3>Implementations</h3>
+            <p>
+                Graphs can be implemented using various data structures, including adjacency matrices, adjacency lists, and edge lists. Graph libraries and 
+            frameworks, like NetworkX in Python and Boost.Graph in C++, provide pre-built graph data structures and algorithms.
+            </p>
+
+
+            <h4>Example Scenarios</h4>
+            <ul>
+                <li><b>Social Networks: </b>Graphs are used to represent connections between individuals in social media platforms like Facebook and Twitter.</li>
+                <li><b>Transportation Networks: </b>Graphs model road networks and flight connections for route planning and navigation systems.</li>
+                <li><b>Dependency Resolution: </b>In software package management systems, graphs represent dependencies between software packages, and 
+                    resolving these dependencies involves graph algorithms.
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="content" id="heaps-content">
+            <h2>Heaps</h2>
+            <h3>Definition</h3>
+            <p>
+                A heap is a specialized binary tree-based data structure that satisfies the heap property. A heap can be either a max-heap or a min-heap. In a 
+            max-heap, the parent node has a greater value than its children, making the maximum element at the root. In a min-heap, the parent node has a 
+            smaller value than its children, making the minimum element at the root. Heaps are often used to efficiently maintain the maximum or minimum 
+            element in a collection, among other applications.
+            </p>
+
+            <h3>Characteristics and Properties</h3>
+            <ul>
+                <li><b>Binary Tree Structure: </b>A heap is typically implemented as a binary tree, but it is not limited to just two children per node.</li>
+                <li><b>Heap Property: </b>The key property of a heap is that every parent node's value is greater than or equal to (in a max-heap) or less 
+                    than or equal to (in a min-heap) the values of its children.
+                </li>
+                <li><b>Complete Binary Tree: </b>Heaps are often represented as complete binary trees, where all levels of the tree are completely filled 
+                    except possibly for the last level, which is filled from left to right.
+                </li>
+                <li><b>Efficient Operations: </b>Heaps allow efficient access to the maximum (or minimum) element and efficient insertion and removal of 
+                    elements with logarithmic time complexity.
+                </li>
+            </ul>
+
+            <h3>Operations</h3>
+            <ul>
+                <li><b>Insertion: </b>To insert an element into a heap, you typically add it as a new leaf node and then perform a "heapify" operation to 
+                    ensure that the heap property is maintained.
+                </li>
+                <li><b>Deletion: </b>To remove the maximum (in a max-heap) or minimum (in a min-heap) element, you replace it with the last leaf node, remove 
+                    the last leaf node, and then perform a "heapify" operation.
+                </li>
+                <li><b>Peek: </b>You can retrieve the maximum (in a max-heap) or minimum (in a min-heap) element without removing it from the heap.</li>
+            </ul>
+
+            <h3>Use Cases:</h3>
+            <p>
+                Heaps are commonly used for priority queues, where elements with higher (in a max-heap) or lower (in a min-heap) priority should be processed 
+            first. They are used in algorithms like heapsort, which is an in-place sorting algorithm. Heaps are employed in various graph algorithms, such as 
+            Dijkstra's algorithm for finding the shortest path.
+            </p>
+
+            <h3>Advantages</h3>
+            <ul>
+                <li>Efficiently maintain the maximum or minimum element in a collection.</li>
+                <li>Offer efficient insertion and removal of elements.</li>
+                <li>Useful for solving a wide range of problems that involve prioritization.</li>
+            </ul>
+
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Limited in functionality compared to other data structures like trees or graphs.</li>
+                <li>Not suitable for all types of operations, as they are primarily designed for maintaining extreme values.</li>
+            </ul>
+
+            <h3>Implementations</h3>
+            <p>
+                Heaps can be implemented using arrays or linked structures, with specific rules for maintaining the heap property during insertion and removal 
+            operations. Common heap-related functions include heapify, push (insert), pop (remove), and peek (retrieve without removal).
+            </p>
+
+            <h4>Example Scenarios</h4>
+            <ul>
+                <li><b>Priority Queues: </b>Heaps are used to implement priority queues in various applications, such as task scheduling, job processing, and 
+                    network routing.
+                </li>
+                <li><b>Heapsort: </b>The heapsort algorithm uses a max-heap to efficiently sort a list of elements in-place.</li>
+                <li><b>Shortest Path Algorithms: </b>Dijkstra's algorithm uses a min-heap to find the shortest path in a weighted graph efficiently.</li>
+            </ul>
+        
+        </div>
+
+        <div class="content" id="hashtables-content">
+            <h2>Hash Tables</h2>
+            <h3>Definition</h3>
+            <p>
+                A hash table, also known as a hash map, is a data structure that allows for efficient data retrieval based on a key-value pair mapping. It uses a 
+                hash function to map keys to specific indices (buckets) in an array, where values associated with those keys are stored. Hash tables provide 
+                constant-time (O(1)) average-case complexity for key-based operations, making them one of the most efficient data structures for retrieval and 
+                storage.
+            </p>
+
+            <h3>Characteristics and Properties</h3>
+            <ul>
+                <li><b>Key-Value Pairs: </b>Data in a hash table is organized as key-value pairs, where each key is unique within the table.</li>
+                <li><b>Hash Function: </b>A hash function is used to transform keys into array indices. It should be deterministic, distribute keys uniformly, 
+                    and minimize collisions.
+                </li>
+                <li><b>Buckets: </b>The array in a hash table is divided into buckets or slots, each capable of storing one or more key-value pairs.</li>
+                <li><b>Collision Handling: </b>Collisions occur when multiple keys map to the same bucket due to hash function limitations. Hash tables employ 
+                    various collision resolution techniques, including chaining (linked lists in each bucket) or open addressing (probing for the next available 
+                    slot).
+                </li>
+            </ul>
+
+            <h3>Operations</h3>
+            <ul>
+                <li><b>Insertion: </b>To insert a key-value pair into a hash table, the hash function is applied to the key to determine the bucket. If a 
+                    collision occurs, the chosen collision resolution method is used.
+                </li>
+                <li><b>Retrieval: </b>To retrieve a value associated with a key, the hash function is applied to the key again to determine the bucket, and 
+                    the value is then located within that bucket.
+                </li>
+                <li><b>Deletion: </b>Deleting a key-value pair typically involves finding the key's location based on the hash and then removing it.</li>
+            </ul>
+
+            <h3>Use Cases</h3>
+            <ul>
+                <li>Hash tables are widely used in applications that require fast key-based data retrieval, such as dictionaries, caches, and database 
+                    indexing.
+                </li>
+                <li>They are essential for implementing associative arrays or maps in many programming languages.</li>
+                <li>Hash tables are used for efficient storage and retrieval of data in hash-based data structures like sets and multisets.</li>
+            </ul>
+
+            <h3>Advantages</h3>
+            <ul>
+                <li>Fast average-case (O(1)) time complexity for key-based operations, making them suitable for large datasets.</li>
+                <li>Versatile and widely used in software development due to their efficiency and simplicity.</li>
+                <li>Hash tables can handle a dynamic number of keys, resizing as needed to maintain performance.</li>
+            </ul>
+
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Determining an optimal hash function can be challenging.</li>
+                <li>Worst-case performance can degrade to O(n) in scenarios with many hash collisions or when resizing the hash table.</li>
+                <li>Memory usage can be inefficient if not properly managed.</li>
+            </ul>
+
+            <h3>Implementations</h3>
+            <p>
+                Hash tables are implemented using arrays (or arrays of linked lists) with associated hash functions. Many programming languages provide built-in 
+            hash table data structures, such as Python's dict, Java's HashMap, and C++'s std::unordered_map. Custom implementations can be created for specific 
+            use cases or environments.
+            </p>
+
+            <h4>Example Scenarios</h4>
+            <ul>
+                <li><b>Dictionary: </b>Storing and looking up word definitions based on words (keys).</li>
+                <li><b>Caching: </b>Storing recently computed or fetched data to avoid expensive recomputation or retrieval.</li>
+                <li><b>Database Indexing: </b>Hash tables are used in database systems to index and retrieve records based on keys efficiently.</li>
+            </ul>
+
+        </div>
+
+    </div>    
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Aptara. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url('ph4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 50px; 
+}
+
+.menu-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px;
+    width: 30px; 
+    height: 30px; 
+    padding-top: 9px;
+    transition: background-color 0.3s; 
+}
+
+.menu-icon:hover {
+    background-color: #4A90E2; 
+    color: white; 
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 5px; 
+    background-color: darkblue;
+}
+
+
+.top-strip {
+    background-color: white;
+    height: 50px; 
+    text-align: center;
+    padding-top: 10px; 
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.top-strip h1 {
+    margin: 0;
+    color :darkblue;
+    font-size:40px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titles {
+    display: none;
+    padding: 20px;
+    width: 220px;
+    height: 550px;
+    background-color: white;
+}
+
+.titles ul {
+    list-style-type: none;
+    padding-left: 0;
+    width: 200px;
+}
+
+.titles li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: darkblue;
+    font-weight: 600;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 200px;
+    transition: all 0.3s ease-in-out; 
+
+}
+
+.titles li a {
+    text-decoration: none;
+    color: inherit; 
+    display: block; 
+}
+
+.titles li:hover {
+    background-color: #4A90E2; 
+    color: white; 
+    cursor: pointer;
+}
+
+.titles li::before {
+    content: '•'; 
+    color: #4A90E2;
+    position: absolute;
+    left: 0; 
+    top: 0; 
+}
+
+footer {
+    color: white;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 0%;
+    width: 100%;
+}

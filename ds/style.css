@@ -1,0 +1,354 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: darkblue;
+}
+
+.container {
+    flex: 1; /* Takes up remaining vertical space */
+    display: flex;
+    flex-direction: column;
+}
+
+.content img {
+    padding-top: 65px;
+    width: 10%;
+    height: 10%;
+    padding-left: 45%;
+}
+
+.container h2 {
+    width: auto;
+    text-align: center;
+    padding-top: 60px;
+}
+
+#default-content h2 {
+    padding-top: 0px;
+}
+
+#default-content li a {
+    color: red;
+    text-decoration: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 110;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px;
+    width: 30px; 
+    height: 30px; 
+    padding-top: 9px;
+    transition: background-color 0.3s; 
+}
+
+.menu-icon:hover {
+    background-color: #4A90E2; 
+    color: white; 
+    cursor: pointer;
+}
+
+.bar {
+    width: 100%;
+    height: 5px; 
+    background-color: darkblue;
+}
+
+.home-icon {
+    position: absolute;
+    left: 100px; /* Adjust as necessary */
+    top: 13px; /* Adjust as necessary */
+    z-index: 110; /* Above .menu-icon and .titles */
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.home-icon span {
+    color: darkblue; /* Adjust color to match your design */
+    /* Add more styling as necessary */
+}
+
+
+.top-strip {
+    position: fixed; /* Fixed positioning relative to the viewport */
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    width: 100%; /* Ensure it spans the full width of the viewport */
+    z-index: 90; /* Ensure it stacks on top of other content */
+    background-color: white;
+    height: 50px; 
+    text-align: center;
+    padding-top: 10px; 
+    padding-bottom: 15px;
+    }
+
+.top-strip h1 {
+    margin: 0;
+    color :darkblue;
+    font-size:40px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titles {
+    display: none; /* Hide the menu by default */
+    padding: 20px;
+    width: 250px; /* Width of the sidebar - adjust as necessary */
+    height: 100%; /* Full height of the viewport */
+    position: fixed; /* Fixed position to the viewport */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left side */
+    background-color: white; /* Background color of the sidebar */
+    z-index: 50; /* Ensure it's below the menu icon */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the menu */
+    transform: translateX(-100%); /* Start off-screen to the left */
+}
+
+.show-titles {
+    display: block; /* Display the block when class is toggled */
+    transform: translateX(0%); /* Move the sidebar into view */
+}
+
+
+.titles ul {
+    list-style-type: none;
+    padding: 0;
+    width: 200px;
+    left: 40px;
+}
+
+.titles li {
+    margin-bottom: 10px;
+    font-size: 26px;
+    color: darkblue;
+    font-weight: 600;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 200px;
+    transition: background-color 0.3s;
+    padding-left: 30px; 
+}
+
+.titles li:hover {
+    background-color: #4A90E2; 
+    color: white; 
+    cursor: pointer;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    text-align: left;
+    font-size: 20px;
+}
+
+
+.shift-content {
+    transform: translateX(280px); /* Shift content to the right */
+    transition: transform 0.3s; /* Animate the shift */
+}
+
+
+
+/* Ensure default content is visible on page load */
+#default-content.shift-content {
+    display: block;
+    margin-left: 0; /* No shift for default content */
+}
+
+
+#default-content{
+    display: block;
+    margin-left: 0; /* Adjust as needed */
+}
+
+
+
+
+footer {
+    width: 100%;
+    height: 2.5%;
+    background-color: darkblue;
+    display: flex;
+    align-items: center;
+    background-size: 100% 100%;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    color: white;
+    font-size: 1em;
+}
+
+/* Theme switcher icon */
+.theme-icon {
+    position: absolute;
+    left: 200px;
+    top: 13px; /* Adjust as needed */
+    z-index: 110; /* Keep it on top */
+    cursor: pointer;
+    font-size: 35px; /* Adjust size as desired */
+}
+
+
+/* Bright theme styles */
+.bright-theme {
+    background-color: white; /* Bright background */
+    color: darkblue; /* Text color for bright background */
+}
+
+
+
+/* Update other elements for the bright theme */
+.bright-theme body {
+    background-color: white;
+    color: darkblue;
+}
+
+.bright-theme .top-strip {
+    background-color: darkblue;
+}
+
+.bright-theme .top-strip h1 {
+    background-color: darkblue;
+    color: white;
+}
+
+.bright-theme .bar{
+    background-color: white;
+}
+
+.bright-theme footer{
+    background-color: white;
+}
+
+.bright-theme footer p,
+.bright-theme .content {
+    color: darkblue;
+}
+
+.bright-theme .titles{
+    background-color: darkblue;
+}
+
+.bright-theme .titles li{
+    color: white;
+}
+
+/* Base styles for the code container */
+.code-container {
+    margin-left: 17%;
+    width: 60%;
+    font-family: 'Fira Code', 'Consolas', monospace; /* Preferred monospaced font */
+    background: #2A2A2A; /* Dark background color */
+    color: #F8F8F2; /* Base text color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px; /* Padding around the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    position: relative; /* For positioning the button */
+    overflow-x: auto; /* For horizontal scrolling */
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  /* Style for the 'Edit & Run' button */
+  .edit-run-btn {
+    position: absolute;
+    top: 10px;
+    right: -70px;
+    background-color: #50fa7b; /* Green background */
+    color: black; /* Text color */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px 10px; /* Padding inside the button */
+    font-size: 0.8em; /* Smaller font size */
+    cursor: pointer; /* Cursor style */
+  }
+  
+  /* Styles for syntax highlighting */
+  .keyword { color: #ff79c6; } /* Pink color for keywords */
+  .string { color: #f1fa8c; } /* Yellow color for strings */
+  .comment { color: #6272a4; } /* Grey color for comments */
+  .annotation { color: #8be9fd; } /* Light blue for annotations */
+  
+#quiz-section {
+    margin-top: 50px;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#quiz-section h2 {
+    color: #333;
+    text-align: center;
+}
+
+#questions-container {
+    margin: 20px 0;
+}
+
+.question {
+    padding: 15px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.question h3 {
+    margin-bottom: 10px;
+}
+
+.answer {
+    display: block;
+    padding: 5px 10px;
+    margin: 5px 0;
+    background: #e9e9e9;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.answer:hover {
+    background: #d0d0d0;
+}
+
+#submit-quiz {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit-quiz:hover {
+    background: #4cae4c;
+}
+
+/* Add these styles to your CSS file */
+.correct .answer input[type="radio"]:checked + label {
+    background-color: #c8e6c9; /* light green */
+}
+
+.wrong .answer input[type="radio"]:checked + label {
+    background-color: #ffcdd2; /* light red */
+}

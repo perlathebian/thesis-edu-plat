@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptara - Java</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="top-strip">
+            <div class="menu-icon" onclick="toggleTitles()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="home-icon" onclick="showDefaultContent()">
+                <!-- You can use an actual icon here or just text -->
+                <span>🏠</span> <!-- Example using an emoji as the home icon -->
+            </div>
+            <div class="theme-icon" onclick="toggleTheme()">☀️</div> <!-- Represents dark theme initially -->
+            <h1>Java Programming</h1>
+        </div>
+
+
+        <div class="titles" id="titles">
+            <ul>
+                <li onclick="showContent('default-content')">Introduction</li>
+                <li onclick="showContent('basic-syntax-content')">Basic Syntax</li>
+                <li onclick="showContent('data-types-vars-content')">Data Types and Variables</li>
+                <li onclick="showContent('operators-content')">Operators</li>
+                <li onclick="showContent('conditionals-content')">Conditionals</li>
+                <li onclick="showContent('loops-content')">Loops</li>
+                <li onclick="showContent('functions-content')">Functions</li>
+                <li onclick="showContent('exceptions-content')">Exception Handling</li>
+                <li onclick="showContent('oop-content')">OOP, Interfaces, Classes</li>
+            </ul>
+        </div>
+
+        <div class="content" id="default-content">
+            <img src="javalogo.png" alt="Java Programming">
+            <h2>Introduction to Java</h2>
+            <p>Java is a high-level, object-oriented programming language that was designed with a few key 
+            principles in mind: platform independence, simplicity, and security.</p>
+
+            <h3>Key Concepts:</h3>
+            <ul>
+                <li><strong>Platform Independence:</strong> Java programs can run on any device that has the Java 
+                Virtual Machine (JVM), making it a "write once, run anywhere" language.<p>For detailed information on Java's platform independence, visit 
+                    <a href="https://docs.oracle.com/javase/tutorial/getStarted/intro/definition.html" target="_blank">this page</a>.</p>
+                    </li>
+                <li><strong>Object-Oriented:</strong> Java follows the object-oriented programming (OOP) paradigm, 
+                emphasizing the use of classes and objects for modular and efficient code.</li>
+                <li><strong>Syntax and Structure:</strong> Java syntax is similar to other C-based languages, 
+                making it accessible to developers familiar with languages like C++ or C#.</li>
+                <li><strong>Memory Management:</strong> Java handles memory management automatically through its 
+                garbage collection mechanism, reducing the risk of memory leaks.</li>
+                <li><strong>Security:</strong> Java incorporates built-in security features, such as the sandbox 
+                model, to protect against malicious activities.</li>
+            </ul>
+
+            <h3>Basic Components:</h3>
+            <ul>
+                <li><strong>Classes and Objects:</strong> Java is designed around the concept of classes and 
+                objects, allowing developers to structure code in a modular and reusable manner.</li>
+                <li><strong>Variables and Data Types:</strong> Java supports various data types, including 
+                primitive types (int, float, char) and reference types (objects).</li>
+                <li><strong>Control Flow:</strong> Java provides constructs for decision-making (if, else 
+                statements), looping (for, while loops), and branching.</li>
+                <li><strong>Methods:</strong> Functions in Java are called methods and are defined within classes. 
+                They allow for code organization and reuse.</li>
+            </ul>
+
+            <h3>Getting Started:</h3>
+            <p>To start programming in Java, you need to:</p>
+            <ol>
+                <li><a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" target="_blank">Install</a> the Java Development Kit (JDK), which includes the Java compiler and other tools needed 
+                for development.</li>
+                <li>Set up an Integrated Development Environment (IDE) likeSet up an IDE like 
+                    <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse</a>, 
+                    <a href="https://www.jetbrains.com/idea/download/?section=windows">IntelliJ</a>, or 
+                    <a href="https://code.visualstudio.com/Download">Visual Studio 
+                Code</a> for a more efficient coding experience.</li>
+                <li>Write your first "Hello, World!" program to ensure that your development environment is set 
+                up correctly.
+                <div class="code-container">
+                    <button class="edit-run-btn">Edit & Run</button>
+                    <pre><code>
+                      <span class="keyword">public</span> <span class="keyword">class</span> MyFirstJavaProgram {
+                      <span class="comment">    /* This is my first java program.
+                             This will print 'Hello World' as the output*/</span>
+                      <span class="keyword">    public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) {
+                                System.out.println(<span class="string">"Hello World"</span>); <span class="comment">// prints Hello World  </span>
+                          }
+                      }
+                    </code></pre>
+                </div>
+                </li>
+            </ol>
+
+            <p>Java is widely used in various domains, including web development (Java EE), mobile application 
+            development (Android), and enterprise systems.</p>
+        </div>
+
+        <div class="content" id="basic-syntax-content" style="display: none;">
+            <h2>Basic Syntax and Data Types in Java</h2>
+                <p>Java has a straightforward syntax and supports various data types to handle different kinds of information. Let's explore the basic syntax and data types:</p>
+        
+                <h3>Basic Syntax:</h3>
+                <ul>
+                    <li><strong>Hello, World! Program:</strong></li>
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code>
+                           <span class = "keyword">public</span> <span class = "keyword">class</span> HelloWorld {
+                           <span class = "keyword">   public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args) {
+                                    System.out.println(<span class="string">"Hello, World!"</span>);
+                              }
+                        }</code></pre>
+                     </div>
+                    <li><strong>Comments:</strong> Use <code>//</code> for single-line comments and <code>/* */</code> for multi-line comments.</li>
+                    <li><strong>Declaring Variables:</strong></li>
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre>
+                           <code>
+                              <span class="keyword">int</span> age; <span class="comment">// Declaration </span>
+                              age = 25; <span class="comment">// Assignment </span>
+                              <span class="comment">// Shortened version (Declaration and Initialization) </span>
+                              <span class="keyword">int</span> height = 180; 
+                           </code>
+                        </pre>
+                     </div>
+                </ul>
+        
+                <h3>Data Types:</h3>
+                <p>Java supports two main categories of data types: primitive and reference.</p>
+        
+                <h4>Primitive Data Types:</h4>
+                <ul>
+                    <li><strong>Integer Types:</strong> <code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code></li>
+                    <li><strong>Floating-Point Types:</strong> <code>float</code>, <code>double</code></li>
+                    <li><strong>Character Type:</strong> <code>char</code></li>
+                    <li><strong>Boolean Type:</strong> <code>boolean</code></li>
+                </ul>
+        
+                <h4>Reference Data Types:</h4>
+                <ul>
+                    <li><strong>Objects:</strong> Instances of classes</li>
+                    <li><strong>Arrays:</strong> Collections of elements of the same type</li>
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre>
+                            <code>
+                                <span class="comment">// Array of integers </span>
+                                <span class="keyword">int</span>[] numbers = {1, 2, 3, 4, 5};
+                            </code>
+                        </pre>
+                    </div>
+                </ul>
+        
+                <h3>Operators:</h3>
+                <ul>
+                    <li><strong>Arithmetic Operators:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
+                    <li><strong>Comparison Operators:</strong> <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+                    <li><strong>Logical Operators:</strong> <code>&amp;&amp;</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</li>
+                </ul>
+        
+                <h3>Control Flow:</h3>
+                <ul>
+                    <li><strong>Conditional Statements:</strong> <code>if</code>, <code>else if</code>, <code>else</code></li>
+                    <li><strong>Looping Statements:</strong> <code>for</code>, <code>while</code>, <code>do-while</code></li>
+                </ul>
+        
+                <p>These are foundational concepts in Java programming, and understanding them is crucial as you delve into more advanced topics.</p>
+                <p>In Java, every application begins with a class name, and that class must match the filename. For example, you can create your 
+                    Java file, called Main.java (this can be done in any text editor). The file can contain a “Hello World!” message, written with 
+                    the following code:</p>
+                <div class="code-container">
+                    <button class="edit-run-btn">Edit & Run</button>
+                    <pre><code>
+                        <span class = "keyword">public</span> <span class = "keyword">class</span> HelloWorld {
+                        <span class = "keyword">   public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args) {
+                                System.out.println(<span class="string">"Hello, World!"</span>);
+                            }
+                    }</code></pre>
+                </div>
+                <p>Every code that runs in Java must be inside a class. In our example, we named it Main. A class should always start with an 
+                    upper-case first letter. The main() method is required and you will see it in every Java program:<pre><code>public static void main(String[] args)</code></pre>. 
+                    Any code inside the main() method will be executed.</p>   
+                <p>In the <b>main()</b> method, we can use the <b>println()</b> method to print a line of text to the screen. System is 
+                    a built-in Java class that contains useful members, such as out, which is short for “output” . The  <b>println()</b> 
+                    method, short for “print line”, is used to print a value to the screen (or a file). Note that each code statement must end with a 
+                    semicolon “;”. When working with text, it must be wrapped inside double quotation marks “ ”, else an error occurs. There is also a 
+                    <b>print()</b> method, similar to  <b>println()</b>; the only difference is that it doesn’t produce 
+                    a new line at the end of the output. You can also use  <b>println()</b> to print numbers, however, we don’t put them 
+                    in double quotes like we do with texts.</p>    
+                <pre><code>System.out.println(416); </code></pre>
+                <p>You can also perform mathematical operation inside the println() method:</p>
+                <pre><code>System.out.println(4 + 6); //10
+System.out.println(5 * 4); //20 </code></pre>
+                <h4>Java Comments</h4>
+                <p>Java comments can be used to explain code, and to make it more readable. It can also be used to prevent execution when testing 
+                    alternative code. </p>
+                <div class="code-container">
+                    <button class="edit-run-btn">Edit & Run</button>
+                    <pre><code>
+                        System.out.println(<span class="string">"Hello, World!"</span>);<span class="comment">//this is a single-line comment</span>
+                        <span class="comment">/*This is a multi-line comment. The code below
+                            will print the sum of two integers to the screen*/</span>
+                        System.out.println(4+2);    
+                    </code></pre>
+                </div>
+                <div id="quiz-section">
+                    <h2>Quiz</h2>
+                    <div id="questions-container">
+                        <!-- Questions will be loaded here by JavaScript -->
+                    </div>
+                    <form action="http://localhost:3000/topic/bs">
+                        <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                    </form>
+                </div>
+        </div>
+
+        <div class="content" id="data-types-vars-content">
+            <h2>Data Types and Variables</h2>
+            <h3>Java Variables</h3>
+            <p>Variables are named storage locations that hold data, and they can be declared using a specific data type. A variable declaration in Java 
+            typically looks like:</p>
+            <pre><code>dataType variableName;</code></pre>  
+            <p>In Java, there are different types of variables, for example:</p> 
+            <ul>
+                <li>String - stores text, such as “Hello”. String values should be wrapped inside double quotes</li>
+                <li>int - stores integers (whole numbers), without decimals, such as 63 or -128.</li>
+                <li>float - stores floating point numbers, with decimals, such as -54.33 or 54.33</li>
+                <li>char - stores single characters, such as ‘b’ or ‘B’. Char values are surrounded by single quotes</li>
+                <li>boolean - stores values with two states: true or false</li>
+            </ul>
+            
+            <h3>Declaring a Variable</h3>
+            <p>To create a variable, you must specify the type and assign it a value using the following syntax:</p>
+            <pre><code>dataType variableName = value;</code></pre>
+            <p>Example:</p>
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code>
+                    <span class = "keyword">String</span> name = <span class = "string">"Joe"</span>; <span class = "comment">//creating a variable of type String and assigning it the value "Joe"</span>
+                    <span class = "keyword">int</span> number = 17; <span class = "comment">//creating a variable of type int and assigning it the value 15</span>
+                </code></pre>
+            </div>
+            <p>You can also re-assign a value to an existing variable, it will overwrite the previous value:</p>
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code>
+                    <span class = "keyword">int</span> number = 17;
+            number = 89; <span class = "comment">//new value is now 89
+            /*If you don't want others or yourself to overwrite an exisitng value
+            you can use the final keyword; this will declare the value as "final" or
+            "constant", which means immutable(unchangeable) and read-only*/</span>
+            <span class = "keyword">final</span> <span class = "keyword">int</span> number = 17;
+            number = 89; <span class = "comment">// this will generate an error: cannot assign a value to a final variable</span>
+                </code></pre>
+            </div>
+            <p>You can try for yourself displaying variables using the <b>println()</b>method, and concatenating different variables (using the plus sign +). 
+            Note: concatenating or adding different variable types might generate errors depending on the types used. (example: you cannot add an integer 
+            to a text).</p>
+
+            <h3>Naming Variables:</h3>
+            <p>Variable names are called identifiers. They should always start with lower-case letters and can contain letters, digits, underscores, and 
+            dollar signs. Names are case-sensitive (<b>myNum</b> is different from <b>mynum</b>). Reserved words like Java keywords  (such as <b>int</b> 
+            or <b>boolean</b>) cannot be used as identifiers/names.</p>
+
+            <h3>Data Types</h3>
+            <p>Data types are divided into two groups:</p>
+            <ul>
+                <li>Primitive data types - include byte, short, int, long, float, double, boolean, and char.
+                    <ul><li>A primitive data type specifies the size and type of variable values, and it has no additional methods.</li></ul>
+                </li>
+                <li>Non-primitive data types - such as String, Arrays, and Classes (more on these later)
+                    <ul><li>Non-primitive data types are called <b>reference types</b> because they refer to objects.</li></ul>
+                </li>
+            </ul>
+
+            <p>The main difference between <b>primitive</b> and <b>non-primitive</b> data types are:</p>
+            <ul>
+                <li>Primitive types are predefined (already defined) in Java. Non-primitive types are created by the programmer and is not defined by Java 
+                (except for <b>String</b>).</li>
+                <li>Non-primitive types can be used to call methods to perform certain operations, while primitive types cannot.</li>
+                <li>A primitive type has always a value, while non-primitive types can be <b>null</b>.</li>
+                <li>A primitive type starts with a lowercase letter, while non-primitive types starts with an uppercase letter.</li>
+            </ul>
+
+            <h3>Type Casting</h3>
+            <p>Type casting refers to the process of converting a variable from one data type to another, allowing the variable to be used in expressions 
+                or operations that require a different type. In Java, there are two types of casting:</p>
+            <ul>
+                <li>Widening casting (automatic) - converts a smaller type to a larger type size:
+                    byte → short → char → int → long → float → double</li>
+                <li>Narrowing casting (manual) - converts a larger type to a smaller type size:
+                    double → float → long → int → char → short → byte</li>
+            </ul>
+
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code>
+                    <span class = "comment">//example of widening casting</span>
+            <span class = "keyword">int</span> myInt = 9;
+            <span class = "keyword">double</span> myDouble = myInt; <span class = "comment">//automatic casting: int to double</span>
+            System.out.println(myInt); <span class = "comment">//output: 9</span>
+            System.out.println(myDouble); <span class = "comment">//output 9.0</span>
+            
+            <span class = "comment">//example of narrowing casting</span>
+            <span class = "keyword">double</span> myDouble = 5.14d;
+            <span class = "keyword">int</span> myInt = <span class = "keyword">int</span>(myDouble); <span class = "comment">//manual casting: double to 
+                int</span>
+            System.out.println(myDouble); <span class = "comment">//output: 5.14</span>
+            System.out.println(myInt); <span class = "comment">//output: 5</span>
+                </code></pre>
+            </div>
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/dt">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content" id="operators-content">
+            <h2>Operators</h2>
+            <p>Java divides operators into groups:</p>
+            <ul>
+            <li>Arithmetic <br>
+            Arithmetic operators include addition (+), subtraction (-), multiplication (*), division (/), modulus(%), increment (++), decrement (- -)<br>
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code>
+            <span class = "comment">//examples</span>
+            x + y; <span class = "comment">//adds together two values</span>
+            x - y; <span class = "comment">//subtracts one value from another</span>
+            x * y; <span class = "comment">//multiplies two values</span>
+            x / y; <span class = "comment">//divides one value by another</span>
+            x % y; <span class = "comment">//returns the division remainder</span>
+            ++x; <span class = "comment">//increases the value of x by 1</span>
+            --x; <span class = "comment">//decreases the value of x by 1</span>
+                </code></pre>
+            </div>
+            </li>
+            <li>Assignment<br>
+            Assignment operators are used to assign values to variables. These include assignment (=), addition assignment (+=), subtraction assignment 
+            (-=), multiplication assignment (*=), division assignment (/=), modulus assignment (%=), logical addition assignment (&=), logical or assignment
+            (|=), ^=… <br>
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code>
+            <span class = "comment">//examples</span>
+            x = 5; <span class = "comment">//assigns value 5 to x</span>
+            x += 5; <span class = "comment">//adds 5 to the value of x</span>
+            x -= 5; <span class = "comment">//subtracts 5 from the value of x</span>
+            x *= 5; <span class = "comment">//multiplies 5 by the value of x</span>
+            x /= 5; <span class = "comment">//divides x by 5</span>
+            x %= 5; <span class = "comment">//returns remainder of the division of x by 5</span>
+            x &= 5; <span class = "comment">//returns value of x & 5</span>
+            x |= 5; <span class = "comment">//returns value of x | 5</span>
+            x ^= 5 <span class = "comment">//return value x^5</span>
+                </code></pre>
+            </div>
+            </li>
+            <li>Comparison <br>
+                Comparison operators are used to compare two values (or variables). This is important in programming, because it helps us to find answers 
+                and make decisions. The return value of a comparison is either <b>true</b> or <b>false</b>. These include equal to (==), not equal to (! =), greater 
+                than (>), less than (<), greater than or equal (> =), less than or equal (< =).</li>
+                
+                <li>Logical<br>
+                
+                Logical operators determine the logic between variables or values. They also test for true or false values. They include logical and (&&), 
+                logical or (||), logical not (!)</li>
+                
+            </ul>
+
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/Operators">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content" id="conditionals-content">
+            <h2>Java Conditions and If Statements</h2>
+            <p>Java has four condition statements that are used to perform different decisions after testing for different actions. </p>
+            <ul>
+            <li>If statement: if a specified condition is true, it specifies a block of code to be executed<br>
+                <pre><code>
+                //syntax
+                if(condition){
+                    //statements to be executed if condition applies
+                }
+                </code></pre>
+                
+                <div class = "code-container">
+                    <button class = "edit-run-btn">Edit & Run</button>
+                    <pre><code>
+                <span class = "comment">//example</span>
+                <span class = "keyword">int</span> x = 8;
+                <span class = "keyword">int</span> y = 19;
+                <span class = "keyword">if</span>(x < y){
+                    System.out.println(<span class = "string">"x is less than y"</span>);
+                }
+                    </code></pre>
+                </div>
+            </li>
+
+            <li>Else statement: if the condition is false, else is used to specify the block of code to be executed in that case<br>
+                <pre><code>
+                    //syntax
+                    if (condition){
+                        //statement to be executed if condition is true
+                    }else {
+                        //statment to be executed if condition is false
+                    }
+                    </code></pre>
+                    
+                    <div class = "code-container">
+                        <button class = "edit-run-btn">Edit & Run</button>
+                        <pre><code>
+                    <span class = "keyword">//example</span>
+                    <span class = "keyword">int</span> x = 8;
+                    <span class = "keyword">int</span> y = 19;
+                    <span class = "keyword">if</span>(x<y){
+                        System.out.println(<span class = "string">"x is less than y"</span>);
+                    }<span class = "keyword">else</span> {
+                        System.out.println(<span class = "string">"x is greater than y"</span>);
+                    }
+                        </code></pre>
+                    </div>
+            </li>
+
+            <li>Else If statement: this is used to test a new condition is the first condition is false<br>
+                <pre><code>
+                        //syntax
+                        if(condition 1){
+                        //statement to be executed if condition 1 is true
+                        }else if(condition 2){
+                        //statement to be executed if condition 1 is false 
+                        }else{
+                        //statement to be executed if both conditions are false
+                        }
+                </code></pre>
+            </li>
+
+            <li>Switch statement: used to select one of many code blocks to be executed based on the value of an expression. It provides a cleaner way to 
+                write multiple <b>if-else</b>conditions for the same variable. <br>
+                <pre><code>
+                        //syntax
+                        switch(expression){
+                            case ...:
+                                //statement
+                                break;
+                            case ...:
+                                //statement
+                                break;
+                            ...
+                            default:
+                                //statement
+                        }
+                </code></pre>
+                        
+                <div class = "code-container">
+                    <button class = "edit-run-btn">Edit & Run</button>
+                    <pre><code>
+                <span class = "comment">//example</span>
+                <span class = "keyword">switch</span> (dayOfWeek) {
+                            <span class = "keyword">case</span> 1:
+                                    System.out.println(<span class = "string">"It's Monday"</span>);
+                                    <span class = "keyword">break</span>;
+                            <span class = "keyword">case</span> 2:
+                                    System.out.println(<span class = "string">"It's Tuesday"</span>);
+                                    <span class = "keyword">break</span>;
+                            <span class = "keyword">case</span> 3:
+                                    System.out.println(<span class = "string">"It's Wednesday"</span>);
+                                    <span class = "keyword">break</span>;
+                            <span class = "keyword">case</span> 4:
+                                    System.out.println(<span class = "string">"It's Thursday"</span>);
+                                    <span class = "keyword">break</span>;
+                            <span class = "keyword">case</span> 5:
+                                    System.out.println(<span class = "string">"It's Friday"</span>);
+                                    <span class = "keyword">break</span>;
+                            <span class = "keyword">case</span> 6:
+                                    System.out.println(<span class = "string">"It's Saturday"</span>);
+                                    <span class = "keyword">break</span>;
+                            <span class = "keyword">case</span> 7:
+                                    System.out.println(<span class = "string">"It's Sunday"</span>);
+                                    <span class = "keyword">break</span>;
+                            <span class = "keyword">default</span>:
+                                    System.out.println(<span class = "string">"Invalid day of the week"</span>);
+                        }
+                    </code></pre>
+                </div>
+                
+                <p>The <b>break</b> statements are important to exit the <b>switch</b> statement after a match is found. The <b>default</b> case is 
+                    optional and is executed if none of the other cases match.</p>
+            </li>
+            </ul>
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/Conditions">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content" id="loops-content">
+            <h2>Loops</h2>
+            <p>Loops are control flow structures in programming that allow a certain block of code to be executed repeatedly based on a specified condition. 
+            They help automate repetitive tasks and streamline the execution of code. There are different types of loops, including:</p>
+            <ul>
+            <li><b>For</b> loop: executes a block of code a specific number of times.<br>
+                <div class = "code-container">
+                    <button class = "edit-run-btn">Edit & Run</button>
+                    <pre><code>
+                <span class = "keyword">for</span> (<span class = "keyword">int</span> i = 0; i < 5; i++) {
+                    <span class = "comment">// Code to be repeated</span>
+                }
+                </code></pre>
+                </div>
+            </li>
+
+            <li><b>For-Each</b> loop: used exclusively to loop through elements in an array:<br>
+                <pre><code>
+                    //syntax
+                    for (type variableName : arrayName) {
+                    // code block to be executed
+                    }
+                </code></pre>
+                
+                <div class = "code-container">
+                    <button class = "edit-run-btn">Edit & Run</button>
+                    <pre><code>
+                <span class = "comment">//example</span>
+                <span class = "keyword">String[]</span> cars = {<span class = "string">"Volvo", "BMW", "Ford", "Mazda"</span>};
+                <span class = "keyword">for</span> (<span class = "keyword">String</span> i : cars) {
+                    System.out.println(<span class = "string">i</span>);
+                }
+                </code></pre>
+                </div>
+            </li>
+
+            <li><b>While</b> loop: repeats a block of code as long as a given condition is true.<br>
+                <pre><code>
+                    while (condition) {
+                        // Code to be repeated
+                    }
+                </code></pre>
+            </li>
+
+            <li><b>Do-While</b> loop: similar to the <b>while</b> loop, but the condition is checked after the code block is executed, ensuring that the 
+                block is executed at least once. <br>
+                <pre><code>
+                    do {
+                        // Code to be repeated
+                    } while (condition);
+                </code></pre>
+            </li>
+
+            <li>It is also possible to place a loop inside another loop. This is called a <b>nested loop</b>. The "inner loop" will be executed one time 
+                for each iteration of the "outer loop":<br>
+                <div class = "code-container">
+                    <button class = "edit-run-btn">Edit & Run</button>
+                    <pre><code>
+                <span class = "comment">// Outer loop</span>
+                <span class = "keyword">for</span> (<span class = "keyword">int</span> i = 1; i <= 2; i++) {
+                System.out.println(<span class = "string">"Outer: " + i</span>);<span class = "comment">// Executes 2 times</span>
+                
+                <span class = "comment">// Inner loop</span>
+                <span class = "keyword">for</span> (<span class = "keyword">int</span> j = 1; j <= 3; j++) {
+                    System.out.println(<span class = "string">"Inner: " + j</span>); <span class = "comment">// Executes 6 times (2 * 3)</span>
+                }
+                }
+                    </code></pre>
+                </div>
+            </li>
+            </ul>
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/Loops">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content" id="functions-content">
+            <h2>Functions and Methods</h2>
+
+            <p>A method is a block of code which only runs when it's called. Data, known as parameters, can be passed into a method. Methods are used to 
+            perform certain actions, and they are also known as functions. They are used to reuse code by defining the code once, and using it many 
+            times.
+            </p>
+
+            <h3>Creating a Method</h3>
+
+            <p>A method must be declared within a class. It is defined with the name of the method, followed by parentheses <b>()</b>. Java provides some 
+            pre-defined methods, such as<b>System.out.println()</b>, but you can also create your own methods to perform certain actions:
+            </p>
+            <pre><code>
+            //syntax of creating a method inside Main
+            public class Main{
+                static void myMethod(){
+                    //code to be executed
+                }
+            }
+            </code></pre>
+            
+            <ul>
+            <li><b>myMethod()</b> is the name of the method</li>
+            <li><b>static</b> means that the method belongs to the Main class and not an object of the Main class (more on how to access methods through 
+                objects in OOP section). </li>
+            <li>To call a method in Java, write the method's name followed by two parentheses <b>()</b> and a semicolon <b>;</b></li>
+            </ul>
+
+            <div class = "code-container">
+            <button class = "edit-run-btn">Edit & Run</button>
+            <pre><code>
+                <span class = "keyword">public</span> class Example {
+                    
+                    <span class = "comment">// Method definition</span>
+                    <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> sayHello() {
+                        System.out.println(<span class = "string">"Hello, World!"</span>);
+                    }
+                
+                    <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args) {
+                        <span class = "comment">// Calling the method</span>
+                        sayHello();
+                    }
+                }
+            </code></pre>
+            </div>
+                
+            <h3>Method Overloading</h3>
+
+            <p>This involves having multiple methods with the same name but with different parameters:</p>
+
+            <pre><code>
+            int myMethod(int x)
+            float myMethod(float x)
+            double myMethod(double x, double y)
+            </code></pre>
+
+            <div class = "code-container">
+            <button class = "edit-run-btn">Edit & Run</button>
+            <pre><code>
+            <span class = "keyword">static</span> <span class = "keyword">int</span> plusMethodInt(<span class = "keyword">int</span> x, <span class = "keyword">int</span> y) {
+                <span class = "keyword">return</span> x + y;
+            }
+            
+            <span class = "keyword">static</span> <span class = "keyword">double</span> plusMethodDouble(<span class = "keyword">double</span> x, <span class = "keyword">double</span> y) {
+                <span class = "keyword">return</span> x + y;
+            }
+            
+            <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args) {
+                <span class = "keyword">int</span> myNum1 = plusMethodInt(8, 5);
+                <span class = "keyword">double</span> myNum2 = plusMethodDouble(4.3, 6.26);
+                System.out.println(<span class = "keyword">"int: "</span> + myNum1);
+                System.out.println(<span class = "keyword">"double: "</span> + myNum2);
+            }
+            </code></pre>
+            </div>
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/Functions">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content" id="exceptions-content">
+            <h2>Exceptions</h2>
+
+            <p>Exceptions are events that occur during the execution of a program that disrupts the normal flow of instructions. Different errors can occur: 
+            coding errors made by the programmer, errors due to wrong input, or other unforeseeable things.
+            </p>
+            
+            <p>When an error occurs, Java will normally stop and generate an error message. The technical term for this is: Java will <em>throw</em> 
+            an <b>exception</b>(throw an error). Exception handling in Java is done using <b>try</b>, <b>catch</b>, and <b>finally</b> blocks.
+            </p>
+            
+            <ul>
+            <li><b>try</b> block: It contains the code that might throw an exception.</li>
+            
+            <li><b>catch</b> block: It contains the code that is executed if an exception occurs in the corresponding try block. Multiple catch blocks can 
+                be used to handle different types of exceptions.
+            </li>
+            <li><b>finally</b> block: It contains the code that is always executed, regardless of whether an exception occurs or not. It's typically 
+                used for cleanup tasks.
+            </li>
+            </ul>   
+
+            <p>Here's the syntax:</p>
+
+            <pre><code>
+                try {
+                    // Code that might throw an exception
+                } catch (ExceptionType1 e1) {
+                    // Code to handle ExceptionType1
+                } catch (ExceptionType2 e2) {
+                    // Code to handle ExceptionType2
+                } finally {
+                    // Code that always executes
+                }
+            </code></pre>
+                
+            <p>Example:</p>
+                
+            <div class = "code-container">
+            <button class = "edit-run-btn">Edit & Run</button>
+            <pre><code>
+                <span class = "keyword">public</span> class ExceptionExample {
+                    <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args) {
+                        <span class = "keyword">try</span> {
+                            <span class = "comment">// Code that might throw an exception</span>
+                            <span class = "keyword">int</span> result = divide(10, 0);
+                            System.out.println(<span class = "string">"Result: "</span> + result);
+                        } <span class = "keyword">catch</span> (<span class = "keyword">ArithmeticException</span> e) {
+                            <span class = "comment">// Code to handle ArithmeticException</span>
+                            System.out.println(<span class = "string">"Error: Cannot divide by zero."</span>);
+                        } <span class = "keyword">finally</span> {
+                            <span class = "comment">// Code that always executes</span>
+                            System.out.println(<span class = "string">"Finally block executed."</span>);
+                        }
+                    }
+                
+                    <span class = "comment">// A method that may throw an exception</span>
+                    <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">int</span> divide(int a, int b) {
+                        <span class = "keyword">return</span> a / b;
+                    }
+                }
+            </code></pre>
+            </div>
+                
+            <p>In this example, the <b>divide</b> method attempts to perform a division operation that may result in an <b>ArithmeticException</b>. The 
+            <b>try</b> block is used to enclose this code, and the <b>catch</b> block handles the specific exception type. The <b>finally</b> block always
+            executes, whether an exception occurs or not.</p>
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/Exceptions">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="content" id="oop-content">
+            <h2>OOP Concepts</h2>
+
+            <p><b>Object-Oriented Programming</b> (OOP) is a programming paradigm that organizes software design around the concept of "objects", which 
+            represents real-world entities and encapsulate data and behavior. Key principles of OOP include encapsulation, inheritance, and polymorphism.
+            </p>
+
+            <p><b>Encapsulation</b> involves bundling data (<b>attributes</b>) and <b>methods</b> (functions) that operate on the data into a single unit 
+            (<b>object</b>).
+            </p> 
+            <p><b>Inheritance</b> allows objects to inherit properties and behaviors from other objects, promoting code reuse. </p>
+
+            <p><b>Polymorphism</b> allows objects of different types to be treated as objects of a common type, providing flexibility and extensibility in 
+            code design. 
+            </p>
+
+            <p>OOP promotes modularity, reusability, and a more intuitive way of modeling complex systems.</p>
+
+            <p><b>Classes</b> and <b>objects</b> are two main aspects of object-oriented programming. For example, class <i>Fruit</i> could have objects 
+            like <i>Apple, Banana, Mango</i>. Another example, class <i>Car</i> could have objects like <i>Volvo, Audi, and Toyota</i>.  So, a class is 
+            a <em>template</em> for objects, and an object is an <em>instance</em> of a class. When the individual objects are created, they inherit all 
+            the variables and methods from the class.
+            </p>
+
+            <p>Everything in Java is associated with classes and objects, along with its attributes and methods. For example: in real life, a car is an object. 
+            The car has <b>attributes</b>, such as weight and color, and <b>methods</b>, such as drive and brake. A class is like an object constructor, 
+            or a "blueprint" for creating objects.
+            </p>
+
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code>
+            <span class = "comment">//creating a class called Car with member variables</span>
+            <span class = "comment">//color, speed, model and method drive()</span>
+            <span class = "keyword">public</span> <span class = "keyword">class</span> Car{
+                <span class = "keyword">String</span> color;
+                <span class = "keyword">double</span> speed;
+                <span class = "keyword">String</span> model;
+                <span class = "keyword">public</span> <span class = "keyword">void</span> drive(){
+                    System.out.println(<span class = "string">"The car is driving"</span>);
+                }
+            }
+
+            <span class = "comment">/*creating an object from the class; specify the class name,
+            followed by the name of the object, and use the keyword "new"*/</span>
+            <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args){
+                Car car1 = <span class = "keyword">new</span> Car();
+                car1.color = "red";
+                car1.speed = "100";
+                car1.model = "ABCDE";
+                System.out.println(car1.color);
+            }
+            </code></pre>
+            </div>
+
+            <p>The term <b>variable</b> or member variable refers to the attribute or member field of the class. In the above example, the Car class has 
+            attributes color, speed, model. You can access attributes by creating an object of the class (car1), and using the dot syntax (<b>.</b>). 
+            This way you can also assign values to the attributes. If you don't want the ability to override existing values, declare the attribute as 
+            <b>final</b>. 
+            </p>
+
+            <h3>Class Methods</h3>
+
+            <p>Example: drive() in the Car class; prints a text (action), when it is called. To call a method, write the method's name followed by two 
+            parentheses <b>()</b> and a semicolon <b>;</b>.
+            </p>
+
+            <h3>Constructors</h3>
+
+            <p>A <b>constructor</b> is a special method that is used to initialize objects. The constructor is called when an object of a class is created. 
+            It can be used to set initial values for object attributes:</p>
+
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code>
+            <span class = "comment">//create a Car class</span>
+            <span class = "keyword">public</span> <span class = "keyword">class</span> Car{
+                <span class = "keyword">int</span> x; <span class = "comment">//create a class attribute</span>
+                
+                <span class = "comment">//create a class constructor for the Car class</span>
+                <span class = "keyword">public</span> Main(){
+                    x = 5; <span class = "comment">//set the initial value for the class attribute x</span>
+                }
+                
+                <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args){
+                    Car car = <span class = "keyword">new</span> Car(); <span class = "comment">//create an object of class Car</span>
+                    System.out.println(car.x); <span class = "comment">//print the value of x</span>
+                }
+            }
+                </code></pre>
+            </div>
+            <i>Note that you cannot create another constructor in the same class with the same parameters.</i>
+            <p>Constructors can also take parameters, which is used to initialize attributes. </p>
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code> 
+            <span class = "keyword">public</span> <span class = "keyword">class</span> Car{
+                <span class = "keyword">int</span> x;
+                
+                <span class = "keyword">public</span> Car(int y){
+                    x = y;
+                }
+                
+                <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args){
+                    Car car = <span class = "keyword">new</span> Car(5);
+                    System.out.println(car.x);
+                }
+            }
+                </code></pre>
+            </div>
+
+            <p>This example adds an int <i>y</i> parameter to the constructor. Inside the constructor we set <i>x</i> to <i>y</i>. When we call the 
+            constructor, we pass a parameter to the constructor (5), which will set the value of <i>x</i> to 5.
+            </p>
+
+            <h3>Access Modifiers</h3>
+
+            <p>For classes, you can either use <b>public</b> (class would be accessible by any other class) or <b>default</b> (class is only accessible in 
+            the same package). For attributes, methods, and constructors, you can either use <b>public</b> (code accessible to all classes), <b>private</b> 
+            (code is only accessible within the declared class), <b>default</b> (code is accessible in the same package), or <b>protected</b> (code is 
+            accessible in the package and subclasses).
+            </p>
+
+            <h3>Non-Access Modifiers</h3>
+
+            <p>For classes you can either use <b>final</b> (class cannot be inherited by other classes), or <b>abstract</b> (class cannot be used to create 
+            objects, to access the class, it must inherited from another class). For attributes and methods, you can use <b>final</b> (attributes and 
+            methods cannot be overridden/modified), <b>static</b> (attributes and methods belong to the class rather than an object), <b>abstract</b> 
+            (can only be used in an abstract class, and can only be used on methods; the method does not have a body, the body will be provided by the 
+            subclass it inherited from ), <b>transient</b> (attributes and methods are skipped when serializing the object containing them), 
+            <b>synchronized</b> (methods can only be accessed by one thread at a time), or <b>volatile</b> (value of an attribute is not cached 
+            thread-locally, and is always read from the "main memory").
+            </p>
+
+            <h3>Encapsulation</h3>
+
+            <p>This concept makes sure that sensitive data is hidden from users. To achieve this, you must declare member variables as private them provide 
+            public get and set methods to access and update the values of those member variables.
+            </p>
+
+            <p>We've established that private variables can only be accessed within the same class, however, with <b>getters</b> and <b>setters</b> (these 
+            being public methods), it is possible to access private variables from an outside class. The getter method returns the value of the variable 
+            while the setter sets this value. The syntax for both methods is they both start with get or set followed by the name of the variable 
+            capitalized (first letter is upper-case).
+            </p>
+
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code
+            <span class = "keyword">public</span> <span class = "keyword">class</span> Person {
+            <span class = "keyword">private</span> <span class = "keyword">String</span> name; <span class = "comment">// private = restricted access</span>
+
+            <span class = "comment">// Getter</span>
+            <span class = "keyword">public</span> <span class = "keyword">String</span> getName() {
+                <span class = "keyword">return</span> name;
+            }
+
+            <span class = "comment">// Setter</span>
+            <span class = "keyword">public</span> <span class = "keyword">void</span> setName(<span class = "keyword">String</span> newName) {
+                <span class = "keyword">this</span>.name = newName;
+            }
+            }
+            <span class = "keyword">public</span> <span class = "keyword">class</span> Main {
+            <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args) {
+                Person myObj = <span class = "keyword">new</span> Person();
+                myObj.name = <span class = "string">"John"</span>;  <span class = "comment">// error</span>
+                System.out.println(myObj.name); <span class = "comment">// error</span>
+                    myObj.setName(<span class = "string">"John"</span>); <span class = "comment">// Set the value of the name variable to "John"</span>
+                System.out.println(myObj.getName()); 
+            }
+            }
+
+            <span class = "comment">/*The get method returns the value of the variable name.
+            The set method takes a parameter 
+            (newName) and assigns it to the name 
+            variable. The this keyword is used to 
+            refer to the current object.*/</span>
+                </code></pre>
+            </div>
+
+            <h3>Inheritance</h3>
+
+            <p>This involves inheriting attributes and methods from one class to another, thus having a <b>subclass (child)</b> inheriting from a <b>superclass 
+            (parent)</b>. To inherit from a class, use the keyword <b>extends</b>.
+            </p>
+
+            <p>In the example below, the <i>Car</i> class (subclass) inherits the attributes and methods from the <i>Vehicle</i> class (superclass):</p>
+
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code>
+            <span class = "keyword">class</span> Vehicle {
+            <span class = "keyword">protected</span> <span class = "keyword">String</span> brand = <span class = "string">"Ford"</span>; <span class = "comment">// Vehicle attribute</span>
+            <span class = "keyword">public</span> <span class = "keyword">void</span> honk() {  <span class = "comment">// Vehicle method</span>
+                System.out.println(<span class = "string">"Tuut, tuut!"</span>);
+            }
+            }
+
+            <span class = "keyword">class</span> Car <span class = "keyword">extends</span> Vehicle {
+            <span class = "keyword">private</span> <span class = "keyword">String</span> modelName = <span class = "string">"Mustang"</span>;    <span class = "comment">// Car attribute</span>
+            <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args) {
+
+                <span class = "comment">// Create a myCar object</span>
+                Car myCar = <span class = "keyword">new</span> Car();
+
+                <span class = "comment">// Call the honk() method (from the Vehicle class) on the myCar object</span>
+                myCar.honk();
+
+                <span class = "comment">// Display the value of the brand attribute (from the Vehicle class) and the value of the modelName from the Car class</span>
+                System.out.println(myCar.brand + <span class = "string">" "</span> + myCar.modelName);
+            }
+            }
+                </code></pre>
+            </div>
+
+            <i>Note</u>: if you try to access a final class, this will generate an error.</i>
+
+            <h3>Polymorphism</h3>
+
+            <p>This means <b>“many forms”</b>, and this occurs when we have many classes that are related to each other by inheritance. As mentioned before, 
+            inheritance allows us to inherit methods and attributes from another class. Polymorphism uses those methods to perform different tasks. This 
+            allows us to perform a single action in different ways. <br>
+            In this example, we have a superclass <i>Animal</i> that has a method called <i>animalSound()</i>. Subclasses of <i>Animal</i> could be 
+            <i>Birds</i> and <i>Dogs</i>, and they also have their own implementation of an animal sound.
+            </p>
+
+            <div class = "code-container">
+                <button class = "edit-run-btn">Edit & Run</button>
+                <pre><code>
+            <span class = "keyword">class</span> Animal {
+            <span class = "keyword">public</span> <span class = "keyword">void</span> animalSound() {
+                System.out.println(<span class = "string">"The animal makes a sound"</span>);
+            }
+            }
+
+            <span class = "keyword">class</span> Bird <span class = "keyword">extends</span>  Animal {
+            <span class = "keyword">public</span> <span class = "keyword"void</span> animalSound() {
+                System.out.println(<span class = "string">"Chirps"</span>);
+            }
+            }
+
+            <span class = "keyword">class</span> Dog <span class = "keyword">extends</span> Animal {
+            <span class = "keyword">public</span> <span class = "keyword"void</span> animalSound() {
+                System.out.println(<span class = "string">"Barks"</span>);
+            }
+            }
+
+            <span class = "keyword">class</span> Main {
+            <span class = "keyword">public</span> <span class = "keyword">static</span> <span class = "keyword">void</span> main(String[] args) {
+                <span class = "comment">//Now we can create Bird and Dog objects and call the animalSound() method on both of them:</span>
+                    Animal myAnimal = <span class = "keyword">new</span> Animal();  <span class = "comment">// Create a Animal object</span>
+                Animal myBird = <span class = "keyword">new</span> Bird();  <span class = "comment">// Create a Bird object</span>
+                Animal myDog = <span class = "keyword">new</span> Dog();  <span class = "comment">// Create a Dog object</span>
+                myAnimal.animalSound();
+                myBird.animalSound();
+                myDog.animalSound();
+            }
+            }
+                </code></pre>
+            </div>
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/OOP">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+        </div>
+
+    </div>    
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Aptara. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    </script>
+</body>
+</html>

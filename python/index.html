@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptara - Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="top-strip">
+            <div class="menu-icon" onclick="toggleTitles()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="home-icon" onclick="showDefaultContent()">
+                <!-- You can use an actual icon here or just text -->
+                <span>🏠</span> <!-- Example using an emoji as the home icon -->
+            </div>
+            <div class="theme-icon" onclick="toggleTheme()">☀️</div> <!-- Represents dark theme initially -->
+            <h1>Python Programming</h1>
+        </div>
+
+
+        <div class="titles" id="titles">
+            <ul>
+                <li onclick="showContent('default-content')">Introduction</li>
+                <li onclick="showContent('basic-concepts-content')">Basic Concepts</li>
+                <li onclick="showContent('control-flow-content')">Control Flow</li>
+                <li onclick="showContent('functions-content')">Functions</li>
+                <li onclick="showContent('data-structures-content')">Data Structures</li>
+                <li onclick="showContent('string-manipulation-content')">String Manipulation</li>
+                <li onclick="showContent('file-handling-content')">File Handling</li>
+                <li onclick="showContent('error-handling-content')">Error Handling</li>
+                <li onclick="showContent('oop-content')">OOP</li>
+            </ul>
+        </div>
+
+        <div class="content" id="default-content">
+            <img src="pylogo.png" alt="Python Programming">
+            <h2>Introduction to Python</h2>
+            <p>Python is a high-level, general-purpose programming language created by Guido van Rossum and first released in 
+                1991. It was designed with readability and simplicity in mind, making it an ideal language for beginners while 
+                remaining powerful enough for professionals. Python has a diverse user base and is widely used in various 
+                domains, including web development, data science, artificial intelligence, and more.
+            </p>
+            <p>Code:</p>
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>
+                  <span class="comment"> # Python code is clean and readable </span>  
+                  <span class="keyword">print</span> ("Hello, World!") 
+                  <span class="comment"> # The classic first program in Python</span>       
+                </code></pre>
+            </div>
+            <p>
+                Links:
+                <ul>
+                    <li><a href="https://www.python.org/">Python Official Website</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/History_of_Python">History of Python on Wikipedia</a></li>
+                </ul>
+            </p>
+            
+            <h3>Setting Up Python Environment:</h3>
+            <p>
+                Before diving into Python programming, it's essential to set up a development environment. The official Python 
+                website provides downloadable installers for Windows, macOS, and Linux. You can choose between the latest 
+                stable version or specific releases based on your requirements.
+            </p>
+            
+            <p><a href="https://www.python.org/downloads/">Download Python</a></p>
+            
+            <p>IDE Recommendations:</p>
+            <ul>
+                <li><a href="https://code.visualstudio.com/download">Visual Studio Code</a></li>
+                <li><a href="https://www.jetbrains.com/pycharm/download/?section=windows">PyCharm</a></li>
+            </ul>
+            
+            <p>Setting up a virtual environment is also recommended for managing project dependencies:
+                <img src="s1.png">
+            </p>
+            
+        </div>
+
+        <div class="content" id="basic-concepts-content" style="display: none;">
+            <h2>Basic Concepts</h2>
+            <h3>Variables and Data Types:</h3>
+            <p>
+                In Python, variables are used to store and manage data. Variables can be assigned values of different data types, 
+                including integers, floats, strings, booleans, and more. Python is dynamically typed, meaning you don't need to 
+                declare the data type explicitly.
+            </p>
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>
+                <span class="comment"># Variables and Data Types</span>  
+                name = <span class="string">"John" </span><span class="comment"> # String</span> 
+                age = <span class="string">25 </span><span class="comment"> # Integer</span> 
+                height = <span class="string">5.9 </span><span class="comment"> # Float</span> 
+                is_student = <span class="string">True </span><span class="comment"> # Boolean</span> 
+                <span class="comment"> # Printing the values</span>      
+                <span class = "keyword">print</span>(<span class="string">"Name:"</span>, name)
+                <span class = "keyword">print</span>(<span class="string">"Age:"</span>, age)
+                <span class = "keyword">print</span>(<span class="string">"Height:"</span>, height)
+                <span class = "keyword">print</span>(<span class="string">"Is Student:"</span>, is_student)
+                </code></pre>
+            </div>
+
+            <p>
+                Think of a variable as a container that stores information. It's like a box with a label on it. You can put 
+                different things in different boxes.<br>
+                <b>Example:</b> name = "John" - Here, name is a variable, and it holds the value "John".<br>
+                Every piece of information in Python has a type. The type defines what kind of information it is.<br>
+                <ul>
+                    <li>String (str): Used for text. "John" is a string.</li>
+                    <li>Integer (int): Used for whole numbers. 25 is an integer.</li>
+                    <li>Float (float): Used for decimal numbers. 5.9 is a float.</li>
+                    <li>Boolean (bool): Used for True or False values. True is a boolean.</li>
+                </ul>
+            </p>
+
+            <h3>Basic Input and Output:</h3>
+            <p>
+                Input and output operations are fundamental. You can use the input() function to take user input and the 
+                print() function to display output. The input() function returns a string, so you may need to convert it to the 
+                desired data type.
+            </p>    
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>
+                <span class="comment"># Basic Input and Output</span>  
+                user_name = <span class = "keyword">input</span>(<span class = "string">"Enter your name: "</span>)
+                user_age = <span class = "keyword">int</span>(<span class = "keyword">input</span>(<span class = "string">"Enter your age: "</span>))<span class="comment"># Convert input to integer</span>
+                <span class="comment"># Displaying output</span>   
+                <span class = "keyword">print</span>(<span class = "string">"Hello, "</span> + user_name + <span class = "string">"!"</span>)
+                <span class = "keyword">print</span>(<span class = "string">"In 5 years, you will be"</span>, user_age + 5, <span class = "string">"years old."</span>)
+                </code></pre>
+            </div>
+
+            <p> 
+                Input (<em>input()</em>): It's like asking the user a question and getting an answer. The <em>input()</em> 
+                function lets the user type something in.<br>
+                <b>Example:</b> <pre><code>user_name = input("Enter your name: ")</code></pre> - This asks the user to enter 
+                their name and stores it in the user_name variable.<br>
+                Output (<em>print()</em>): It's like showing something to the user. The <em>print()</em> function displays 
+                information on the screen.<br>
+                <b>Example:</b> <pre><code>print("Hello, " + user_name + "!")</code></pre> - This prints a greeting with the 
+                user's name.
+            </p>    
+
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/PBC">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="content" id="control-flow-content" style="display: none;">
+            <h2>Control Flow</h2>
+            <h3>Conditional Statements (if, else, elif):</h3>
+
+            <p>
+                Conditional statements are like decision-makers in your code. They help your program make decisions based on 
+                certain conditions.
+            </p>
+            <p>
+                <u><b>if Statement:</b></u> It checks if a condition is true, and if it is, it executes a block of code.
+            </p>
+            <pre><code>
+            age = 20
+            if age >= 18:
+                print("You are an adult.")
+            </code></pre>
+
+            <p>In this example, it checks if the variable age is greater than or equal to 18. If true, it prints "You are an 
+                adult."
+            </p>
+
+            <p>
+                <u><b>else Statement:</b></u> If the if condition is not true, the else block gets executed.
+            </p>
+            <pre><code>
+            age = 15
+            if age >= 18:
+                print("You are an adult.")
+            else:
+                print("You are a minor.")
+            </code></pre>
+
+            <p>Here, if the age is less than 18, it prints "You are a minor."</p>
+
+            <p>
+                <u><b>elif Statement:</b></u> It stands for "else if". It allows you to check multiple conditions.
+            </p>
+            <pre><code>
+            time_of_day = "morning"
+            if time_of_day == "morning":
+                print("Good morning!")
+            elif time_of_day == "afternoon":
+                print("Good afternoon!")
+            else:
+                print("Good evening!")
+            </code></pre>
+            <p>This example checks the time_of_day variable and prints a greeting accordingly.</p>
+
+            <h3>Loops (for, while):</h3>
+            <p>
+                Loops are used when you want to repeat a block of code multiple times.<br>
+                <b><u>for Loop:</u></b>  It iterates over a sequence (such as a list or a range of numbers) and executes a 
+                block of code for each element.<br>
+            </p>
+
+            <pre><code>
+            fruits = ["apple", "banana", "cherry"]
+            for fruit in fruits:
+                print(fruit)
+            </code></pre>
+            <p>This loop prints each fruit in the list fruits.</p>
+            <p>
+                <b><u>while Loop:</u></b> It repeats a block of code as long as a certain condition is true.
+            </p>
+            <pre><code>
+            count = 0
+            while count < 5:
+                print("Count is", count)
+                count += 1
+            </code></pre>
+            <p>This loop prints the value of count until it becomes equal to or greater than 5.</p>
+
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/PCF">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="content" id="functions-content" style="display: none;">
+            <h2>Functions</h2>
+            <h3>Defining and Calling Functions:</h3>
+            <p>
+                In Python, a function is a reusable block of code that performs a specific task. Functions are defined using 
+                the def keyword, and they can be called to execute the code within them.
+            </p>
+            <h4>Defining a Function:</h4>
+            <pre><code>
+                def greet_user():
+                """This function greets the user."""
+                    print("Hello, user!")
+            </code></pre>
+            <p>
+                Here, greet_user is the name of the function, and the triple-quoted string is a docstring that provides a brief 
+                description of what the function does.
+            </p>
+
+            <h4>Calling a Function:</h4>
+            <pre><code>
+                greet_user()  # Calling the function
+            </code></pre>
+            <p>This line calls the greet_user function, executing the code within it and printing "Hello, user!".</p>
+
+
+            <h3>Parameters and Return Values:</h3>
+            <p>
+                Functions can accept parameters (inputs) and return values (outputs). Parameters allow you to pass information 
+                to a function, and return values allow a function to send information back to the calling code.
+            </p>
+            <h4>Function with Parameters:</h4>
+            <pre><code>
+                def greet_person(name):
+                """This function greets a person by name."""
+                    print("Hello, " + name + "!")
+            </code></pre>
+            <p>Here, name is a parameter, and the function can be called with different names to customize the greeting.</p>
+
+            <h4>Function with Return Value:</h4>
+            <pre><code>
+                def add_numbers(a, b):
+                """This function adds two numbers and returns the result."""
+                    result = a + b
+                    return result
+            </code></pre>
+
+            <p>
+                This function takes two parameters a and b, adds them, and returns the result. The calling code can use this 
+                result.
+            </p>    
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>
+                <span class="comment"># Defining a simple function</span>  
+                <span class = "keyword">def</span>  greet_user():
+                <span class="comment">"""This function greets the user."""</span>  
+                <span class = "keyword">    print</span>(<span class = "string">"Hello, user!"</span>)
+                <span class="comment"># Calling the function</span>  
+                greet_user() 
+                <span class="comment"># Function with a parameter</span>
+                <span class = "keyword">def</span> greet_person(name):
+                <span class="comment">"""This function greets a person by name."""</span>  
+                <span class = "keyword">    print</span>(<span class = "string">"Hello, "</span> + name + <span class = "string">"!"</span>)
+                <span class="comment"># Calling the function with different names</span> 
+                greet_person(<span class = "string">"Alice"</span>)
+                greet_person(<span class = "string">"Bob"</span>)
+                <span class="comment"># Function with return value</span> 
+                <span class = "keyword">def</span> add_numbers(a, b):
+                <span class="comment">"""This function adds two numbers and returns the result."""</span> 
+                    result = a + b
+                <span class = "keyword">    return</span> result
+                <span class="comment"># Calling the function and using the return value</span> 
+                sum_result = add_numbers(3, 5)
+                <span class = "keyword">print</span>(<span class = "string">"Sum:"</span>, sum_result)
+                </code></pre>
+            </div>
+            <p>
+                The greet_user function is defined to print a simple greeting. When called, it prints "Hello, user!".<br>
+            The greet_person function takes a name parameter, allowing customization of the greeting for different names.<br>
+            The add_numbers function takes two parameters, adds them, and returns the result. The calling code stores the 
+            result in sum_result and prints it.
+            </p>
+
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/PF">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="content" id="data-structures-content" style="display: none;">
+            <h2>Data Structures</h2>
+            <p>
+                A data structure is a way of organizing and storing data to perform operations efficiently. It defines the 
+                relationship between the data and the operations that can be performed on the data. Data structures are 
+                essential for managing and manipulating information in a computer's memory.
+            </p>
+            
+            <h3>Lists</h3>
+            <p>
+                A list is a versatile and mutable data structure in Python. It is an ordered collection of items, and each item 
+                can be of any data type. Lists are defined using square brackets [].
+            </p>    
+            
+            <h4>Creating a List</h4>
+            
+            <pre><code>
+                my_list = [1, "apple", 3.14, True]
+            </code></pre>
+            
+            <p>This list contains an integer, a string, a float, and a boolean.</p>
+            
+            <h4>Accessing Elements</h4>
+            
+            <pre><code>
+                first_element = my_list[0]
+            </code></pre>
+            
+            <p>Lists are zero-indexed, so my_list[0] gives you the first element.</p>
+            
+            <h4>Modifying a List</h4>
+            
+            <pre><code>
+                my_list[1] = "orange"
+            </code></pre>
+            
+            <p>Lists are mutable, meaning you can change their elements after creation.</p>
+            
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>
+                <span class="comment"># Creating a list</span>  
+                fruits = [<span class="string">"apple", "banana", "cherry"</span>]
+                <span class="comment"># Accessing elements</span>
+                first_fruit = fruits[0]
+                <span class = "keyword">print</span>(<span class = "string">"First fruit:"</span>, first_fruit)
+                <span class="comment"># Modifying the list</span>
+                fruits[1] = <span class = "string">"orange"</span>
+                <span class = "keyword">print</span>(<span class = "string">"Modified list:",</span> fruits)
+                </code></pre>
+            </div>
+            
+            <h3>Tuples</h3>
+            <p>
+                A tuple is similar to a list, but it is immutable, meaning you cannot change its elements after creation. 
+                Tuples are defined using parentheses ().
+            </p>    
+            
+            <h4>Creating a Tuple</h4>
+            
+            <pre><code>
+                my_tuple = (1, "apple", 3.14, True)
+            </code></pre>
+            
+            <p>This tuple is similar to the list mentioned earlier.</p>
+            
+            <h4>Accessing Elements</h4>
+            
+            <pre><code>
+                second_element = my_tuple[1]
+            </code></pre>
+            
+            <p>Tuples, like lists, are zero-indexed.</p>
+            
+            <h4>Immutable Nature</h4>
+            
+            <pre><code>
+                # This will result in an error
+                my_tuple[1] = "orange"
+            </code></pre>
+            
+            <p>Once a tuple is created, you cannot modify its elements.</p>
+            
+            
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>
+                <span class="comment"># Creating a tuple</span>  
+                colors = (<span class="string">"red", "green", "blue"</span>)
+                <span class="comment"># Accessing elements</span>
+                second_color = colors[1]
+                <span class = "keyword">print</span>(<span class = "string">"Second color:"</span>, second_color)
+                </code></pre>
+            </div>
+            
+            
+            <h3>Dictionaries</h3>
+            
+            <p>
+                A dictionary is an unordered collection of key-value pairs. Each key must be unique, and it is used to access 
+                its associated value. Dictionaries are defined using curly braces {}.
+            </p>    
+            
+            <h4>Creating a Dictionary</h4>
+            
+            <pre><code>
+                my_dict = {"name": "John", "age": 25, "city": "New York"}
+            </code></pre>
+            
+            <p>This dictionary has keys "name", "age", and "city".</p>
+            
+            <h4>Accessing Values</h4>
+            
+            <pre><code>
+                user_age = my_dict["age"]
+            </code></pre>
+            
+            <p>You can access the value associated with a key using square brackets.</p>
+            
+            <h4>Adding and Modifying Entries</h4>
+            
+            <pre><code>
+                my_dict["occupation"] = "Engineer"
+                my_dict["age"] = 26
+            </code></pre>
+            
+            <p>You can add new key-value pairs or modify existing ones.</p>
+            
+            
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>
+                <span class="comment"># Creating a dictionary</span>  
+                person_info = {<span class="string">"name": "Alice", "age": 30, "city": "London"</span>}
+                <span class="comment"># Accessing values</span>
+                user_city = person_info[<span class = "string">"city"</span>]
+                <span class = "keyword">print</span>(<span class = "string">"User's city:"</span>, user_city)
+                <span class="comment"># Modifying the dictionary</span>
+                person_info[<span class = "string">"occupation"</span>] = <span class = "string">"Designer"</span>
+                person_info[<span class = "string">"age"</span>] = 31
+                <span class = "keyword">print</span>(<span class = "string">"Modified dictionary:"</span>, person_info)
+                </code></pre>
+            </div>
+            
+            <h3>SUMMARY</h3>
+            <p>
+                A list is a versatile and mutable data structure in Python. It is an ordered collection of items, and each item 
+                can be of any data type. Lists are defined using square brackets []. Lists are commonly used when the order of 
+                elements matters, and you may need to modify the elements after creating the list.<br>
+                A tuple is similar to a list but is immutable, meaning you cannot change its elements after creation. Tuples 
+                are defined using parentheses (). Tuples are useful when you want to ensure that the data remains constant 
+                throughout your program, providing a level of data integrity. <br>
+                A dictionary is an unordered collection of key-value pairs. Each key must be unique, and it is used to access 
+                its associated value. Dictionaries are defined using curly braces {}. Dictionaries are ideal for situations 
+                where you need to represent structured information with labeled data.
+            </p>
+
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/PDS">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+                        
+        </div>
+
+        <div class="content" id="string-manipulation-content" style="display: none;">
+            <h2>String Manipulation</h2>
+            <h3>What are Strings?</h3>
+            <p>
+                In programming, a string is a sequence of characters enclosed in quotes. Characters can be letters, numbers, 
+                symbols, or spaces. Strings are a fundamental data type and are used to represent textual data.
+            </p>
+            <h3>Purpose:</h3>
+            <p>
+                Strings are used to store and manipulate textual information in a program. They play a crucial role in 
+                representing names, addresses, messages, and any form of human-readable data.
+            </p>
+
+            <h3>String Operations</h3>
+            <p>
+                <b><u>Operations:</u></b> String operations are actions or transformations applied to strings. These can 
+                include concatenation, slicing, and formatting.
+            </p>
+
+            <h4>Basic String Operations:</h4> 
+            <ul>
+                <li>
+                    <u>Concatenation:</u> Concatenation involves combining two or more strings to form a new string.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code>
+                        <span class="comment"># Concatenation example</span>  
+                        greeting = <span class="string">"Hello, "</span>
+                        name = <span class="string">"John"</span>
+                        full_greeting = greeting + name
+                        <span class = "keyword">print</span>(<span class = "string">"Full Greeting:"</span>, full_greeting)
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    <u>Slicing:</u> Slicing extracts a portion of a string based on specified indices.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code>
+                        <span class="comment"># Slicing example</span>  
+                        sentence = <span class="string">"This is a sample sentence."</span>
+                        substring = sentence[5:14]
+                        <span class = "keyword">print</span>(<span class = "string">"Substring:"</span>, substring)
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    <u>Length (using len()):</u> The len() function returns the length (number of characters) of a string.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code> 
+                        text = <span class="string">"Python is powerful!"</span>
+                        length = len(text)
+                        <span class = "keyword">print</span>(<span class = "string">"Length:"</span>, length)
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    <u>Repetition:</u> Repetition involves creating a new string by repeating a given string multiple times.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code> 
+                        <span class="comment"># Repetition example</span>     
+                        word = <span class="string">"Python"</span>
+                        repeated_word = word * 3
+                        <span class = "keyword">print</span>(<span class = "string">"Repeated Word:"</span>, repeated_word)
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    <u>Comparison:</u> String comparison is used to determine if two strings are equal or if one comes before 
+                    or after the other.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code> 
+                        <span class="comment"># Comparison example</span>     
+                        string1 = <span class="string">"apple"</span>
+                        string2 = <span class="string">"banana"</span>
+                        result = string1 < string2
+                        <span class = "keyword">print</span>(<span class = "string">"Comparison Result:"</span>, result)
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    <u>Membership Test:</u> The in keyword is used to check if a substring is present in a string.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code> 
+                        <span class="comment"># Membership example</span>     
+                        text = <span class="string">"Python is fun!"</span>
+                        contains_py = <span class="string">"py"</span> <span class = "keyword">in</span> text
+                        <span class = "keyword">print</span>(<span class = "string">"Contains 'py':"</span>, contains_py)
+                        </code></pre>
+                    </div>
+                </li>
+            </ul>
+
+            <p>
+                These basic string operations are essential for manipulating and analyzing strings in Python. They provide a 
+                foundation for more advanced string methods, allowing you to perform a wide range of tasks with textual data. 
+            </p>
+
+
+            <h3>String Methods</h3>
+            <p>
+                <b><u>Methods:</u></b> Methods are functions associated with an object (in this case, a string). They perform 
+                specific operations on the string, such as manipulation, searching, or formatting.
+            </p>  
+
+            <h4>Important String Methods</h4>
+            <ul>
+                <li>
+                    <b>len():</b> The len() method returns the length (number of characters) of a string.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code>      
+                        text = <span class="string">"Hello, World!"</span>
+                        length = len(text)
+                        <span class = "keyword">print</span>(<span class = "string">"Length:"</span>, length)
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    <b>lower() and upper():</b> lower() converts all characters in a string to lowercase, and upper() converts 
+                    them to uppercase.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code>      
+                        text = <span class="string">"Hello, World!"</span>
+                        lower_case = text.lower()
+                        upper_case = text.upper()
+                        <span class = "keyword">print</span>(<span class = "string">"Lowercase:"</span>, lower_case)
+                        <span class = "keyword">print</span>(<span class = "string">"Uppercase:"</span>, upper_case)
+                        </code></pre>
+                    </div>
+                </li> 
+                <li>
+                    <b>replace():</b> The replace() method replaces a specified substring with another substring.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code>      
+                        text = <span class="string">"Hello, World!"</span>
+                        new_text = text.replace(<span class = "string">"World"</span>, <span class = "string">"Python"</span>)
+                        <span class = "keyword">print</span>(<span class = "string">"Updated Text:"</span>, , new_text)
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    <b>split():</b> split() divides a string into substrings based on a specified delimiter (default is space) 
+                    and returns a list.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code>      
+                        sentence = <span class="string">"This is a sample sentence."</span>
+                        words = sentence.split()
+                        <span class = "keyword">print</span>(<span class = "string">"Words:"</span>, words)
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    <b>join():</b> join() is used to concatenate elements of a sequence (e.g., a list) into a string using a 
+                    specified delimiter.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code>      
+                        words = [<span class="string">"Hello"</span>, <span class="string">"World"</span>]
+                        sentence = " ".join(words)
+                        <span class = "keyword">print</span>(<span class = "string">"Sentence:"</span>, sentence)
+                        </code></pre>
+                    </div>
+                </li>
+                <li>
+                    <b>find() and count():</b> find() searches for a substring in a string and returns the index of the first 
+                    occurrence (or -1 if not found).<br>
+                    count() returns the number of occurrences of a substring in a string.
+                    <div class="code-container">
+                        <button class="edit-run-btn">Edit & Run</button>
+                        <pre><code>      
+                        text = <span class="string">"Hello, Hello, World!"</span>
+                        index = text.find(<span class="string">"World"</span>)
+                        occurrences = text.count(<span class="string">"Hello"</span>)
+                        <span class = "keyword">print</span>(<span class = "string">"Index of 'World':"</span>, index)
+                        <span class = "keyword">print</span>(<span class = "string">"Occurrences of 'Hello':"</span>, occurrences)
+                        </code></pre>
+                    </div>
+                </li>
+            </ul>
+
+            <p>
+                These string methods are fundamental for manipulating and processing textual data in Python. Understanding these 
+                tools will enable you to efficiently work with strings in your programs.
+            </p>    
+
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/PSM">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="content" id="file-handling-content" style="display: none;">
+            <h2>File Handling</h2>
+            <h3>Reading from a File</h3>
+            <p>
+                Reading from a file involves opening an existing file and retrieving its content. The <em>open()</em> function 
+                is used to open a file, and <em>read()</em> or <em>readlines()</em> methods are used to access its content.
+            </p>
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>      
+                <span class="comment"># Opening a file in read mode</span>    
+                <span class="keyword">with open</span>(<span class = "string">"sample.txt", "r"</span>) <span class = "keyword">as</span> file:
+                    content = file.<span class = "keyword">read()</span>  <span class = "comment"># Read the entire file as a single string</span>
+                    <span class = "comment"># Alternatively, use readlines() to read each line into a list</span>
+                    <span class = "comment"># lines = file.readlines()</span>
+                <span class = "keyword">print</span>(<span class="string">"File Content:"</span>)
+                <span class = "keyword">print</span>(content)
+                </code></pre>
+            </div>
+
+
+            <h3>Writing to a File</h3>
+            <p>
+                Writing to a file involves creating a new file or overwriting an existing one. The <em>open()</em> function is 
+                used with the "w" (write) mode, and the <em>write()</em> method is used to add content.
+            </p>    
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>      
+                <span class="comment"># Opening a file in write mode (creates a new file if it doesn't exist)</span>    
+                <span class="keyword">with open</span>(<span class = "string">"output.txt", "w"</span>) <span class = "keyword">as</span> file:
+                    file.<span class = "keyword">write</span>(<span class = "string">"Hello, this is a new file!\n"</span>)
+                    file.<span class = "keyword">write</span>(<span class = "string">"Writing to files is easy in Python."</span>)
+                </code></pre>
+            </div>
+
+
+            <h3>Appending to a File</h3>
+
+            <p>
+                Appending to a file adds new content to the end of an existing file. The <em>open()</em> function is used with 
+                the "a" (append) mode.
+            </p>    
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>      
+                <span class="comment"># Opening a file in append mode</span>    
+                <span class="keyword">with open</span>(<span class = "string">"output.txt", "a"</span>) <span class = "keyword">as</span> file:
+                    file.<span class = "keyword">write</span>(<span class = "string">"\nAppending additional content."</span>)
+                </code></pre>
+            </div>
+
+
+            <h3>Reading and Writing Binary Files</h3>
+
+            <p>
+                For non-text files (e.g., images, videos), use binary modes "rb" (read binary) and "wb" (write binary).
+            </p>
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>      
+                <span class="comment"># Reading a binary file</span>    
+                <span class="keyword">with open</span>(<span class = "string">"image.jpg", "rb"</span>) <span class = "keyword">as</span> binary_file:
+                    binary_data = binary_file.<span class = "keyword">read()</span>
+                <span class="comment"># Writing to a binary file</span>       
+                <span class="keyword">with open</span>(<span class = "string">"copy_image.jpg", "wb"</span>) <span class = "keyword">as</span> new_binary_file:
+                    new_binary_file.<span class = "keyword">write</span>(binary_data)
+                </code></pre>
+            </div>
+
+
+            <h3>Using with Statement (Context Manager)</h3>
+
+            <p>
+                The with statement is used as a context manager, ensuring that the file is properly opened and closed. It's 
+                considered best practice for file handling.
+            </p>
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>    
+                <span class="keyword">with open</span>(<span class = "string">"sample.txt", "r"</span>) <span class = "keyword">as</span> file:
+                    content = file.<span class = "keyword">read()</span>
+                    <span class="keyword">print</span>(<span class="string">"File Content:"</span>)
+                    <span class="keyword">print</span>(content)
+                <span class="comment"># File is automatically closed outside the 'with' block</span>    
+                </code></pre>
+            </div>
+
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/PFH">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="content" id="error-handling-content" style="display: none;">
+            <h2>Error Handling</h2>
+            <h3>What are Exceptions?</h3>
+            <p>
+                An exception is an event that occurs during the execution of a program, disrupting the normal flow of 
+                instructions. In Python, exceptions are raised when an error or an exceptional condition occurs during the 
+                program's execution.
+            </p>
+
+            <h3>Why Handle Exceptions?</h3>
+            <ul>
+                <li>
+                    Maintain Program Flow: Exception handling allows you to catch and handle errors gracefully, preventing the 
+                    program from crashing.
+                </li>
+                <li>
+                    Debugging: It provides valuable information about the error, aiding in the debugging process.
+                </li>
+                <li>
+                    User-Friendly: Handling exceptions allows you to present user-friendly error messages rather than exposing 
+                    technical details.
+                </li>
+            </ul>
+
+            <h3>How to Handle Exceptions</h3>
+            <p>
+                <b>Using try and except Blocks</b><br>
+                The try block encloses the code that may raise an exception.<br>
+                The except block catches and handles the exception if one occurs.
+            </p>    
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>    
+                <span class="keyword">try:</span>
+                    <span class = "comment"># Code that may raise an exception</span>
+                    num1 = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Enter a number: "</span>))
+                    num2 = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Enter another number: "</span>))
+                    result = num1 / num2
+                    <span class="keyword">print</span>(<span class="string">"Result:"</span>, result)
+                <span class = "keyword">except</span> ZeroDivisionError:
+                    <span class="keyword">print</span>(<span class="string">"Error: Division by zero is not allowed."</span>)
+                <span class = "keyword">except</span> ValueError:
+                    <span class="keyword">print</span>(<span class="string">"Error: Please enter valid numbers."</span>)   
+                <span class = "keyword">except Exception as</span> e:     
+                    <span class="keyword">print</span>(f<span class="string">"An unexpected error occurred: {e}"</span>) 
+                <span class="keyword">else</span>:
+                    <span class="keyword">print</span>(<span class="string">"No exception occurred."</span>)      
+                <span class="keyword">finally</span>:
+                    <span class="keyword">print</span>(<span class="string">"This block always executes, whether there was an exception or not."</span>)      
+                </code></pre>
+            </div>
+
+            <p>
+                The <b>try</b> block contains the code that may raise exceptions. If an exception occurs, the control moves to the 
+                appropriate except block based on the type of exception. Multiple except blocks can handle different types of 
+                exceptions. The <b>else</b> block is executed if no exception occurs in the try block. The <b>finally</b> block is always 
+                executed, regardless of whether an exception occurred or not.
+            </p>
+
+            <h4>Common Built-in Exception Types</h4>
+            <ul>
+                <li>
+                    ZeroDivisionError: Raised when division or modulo by zero occurs.
+                </li>
+                <li>
+                    ValueError: Raised when a built-in operation or function receives an argument with the right type but an 
+                    inappropriate value.
+                </li>
+                <li>
+                    TypeError: Raised when an operation or function is applied to an object of the inappropriate type.
+                </li>
+                <li>
+                    FileNotFoundError: Raised when attempting to open a file that does not exist.
+                </li>
+            </ul> 
+
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/PEH">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="content" id="oop-content" style="display: none;">
+            <h2>OOP Concepts</h2>
+            <h3>What is OOP?</h3>
+            <p>
+                <b>Object-Oriented Programming</b> (OOP) is a programming paradigm that revolves around the concept of objects. 
+                Objects are instances of classes, and classes define the properties (attributes) and behaviors (methods) of 
+                these objects. OOP promotes the organization of code into reusable and modular structures.
+            </p>
+
+            <h3>Why is OOP Used?</h3>
+            <ul>
+                <li>
+                    Modularity: OOP allows breaking down complex systems into smaller, manageable components (objects).
+                </li>
+                <li>
+                    Reusability: Objects and classes can be reused in different parts of a program or in different programs.
+                </li>
+                <li>
+                    Encapsulation: The encapsulation of data and methods within a class prevents unintended interference from 
+                    external code.
+                </li>
+                <li>
+                    Abstraction: OOP provides a way to abstract complex systems, making it easier to understand and maintain.
+                </li>
+            </ul>
+
+            <h3>Common Terms in OOP</h3>
+            <ul>
+                <li>
+                    Class: A blueprint for creating objects. It defines attributes and methods that will be present in objects 
+                    of that class.
+                </li>
+                <li>
+                    Object: An instance of a class. Objects have attributes and behaviors defined by the class.
+                </li>
+                <li>
+                    Attribute: A property of an object, which can be data or other objects.
+                </li>
+                <li>
+                    Method: A function defined within a class that operates on its attributes.
+                </li>
+                <li>
+                    Inheritance: A mechanism where a new class inherits properties and behaviors from an existing class.
+                </li>
+                <li>
+                    Polymorphism: The ability of different classes to be treated as instances of the same class through a 
+                    common interface.
+                </li>
+            </ul>
+
+            <h3>Inheritance in OOP</h3>
+            <p>
+                Inheritance is a fundamental concept in OOP where a new class (subclass/derived class) inherits attributes and 
+                methods from an existing class (superclass/base class). It allows code reuse and promotes a hierarchical 
+                structure.
+            </p>
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>    
+                <span class="keyword">class</span> Animal:
+                    <span class = "keyword">def__init__</span>(<span class = "keyword">self</span>, name):
+                        <span class="keyword">self</span>.name = name  
+                    <span class = "keyword">def</span>speak(<span class = "keyword">self</span>):
+                        <span class="keyword">pass</span> 
+                <span class="keyword">class</span> Dog(Animal):    
+                    <span class = "keyword">def</span>speak(<span class = "keyword">self</span>):
+                        <span class="keyword">return</span><span class="string"> "Woof!"</span>
+                <span class="keyword">class</span> Cat(Animal):    
+                    <span class = "keyword">def</span>speak(<span class = "keyword">self</span>):
+                        <span class="keyword">return</span><span class="string"> "Meow!"</span>    
+                <span class="comment"># Creating instances of subclasses</span>  
+                dog = Dog(<span class = "string">"Buddy"</span>)  
+                cat = Cat(<span class="string">"Whiskers"</span>)       
+                <span class="comment"># Using inherited method</span>    
+                <span class="keyword">print</span>(dog.speak()) <span class="comment"> # Output: Woof!</span>
+                <span class="keyword">print</span>(cat.speak()) <span class="comment"> # Output: Meow!</span>
+                </code></pre>
+            </div>
+
+            <h3>Polymorphism in OOP</h3>
+            <p>
+                Polymorphism allows objects of different classes to be treated as objects of a common interface. It enables 
+                flexibility in using objects without knowing their specific types.
+            </p>    
+
+            <div class="code-container">
+                <button class="edit-run-btn">Edit & Run</button>
+                <pre><code>    
+                <span class="keyword">class</span> Shape:
+                    <span class = "keyword">def</span> area(<span class = "keyword">self</span>):
+                        <span class="keyword">pass</span> 
+                <span class="keyword">class</span> Circle(Shape):    
+                    <span class = "keyword">def__init__</span>(<span class = "keyword">self</span>, radius):
+                        <span class="keyword">self</span>.radius = radius   
+                    <span class = "keyword">def</span>area(<span class = "keyword">self</span>):
+                        <span class="keyword">return</span> 3.14 * <span class="keyword">self</span>.radius**2   
+                <span class="keyword">class</span> Square(Shape):    
+                    <span class = "keyword">def__init__</span>(<span class = "keyword">self</span>, side):
+                        <span class="keyword">self</span>.side = side   
+                    <span class = "keyword">def</span>area(<span class = "keyword">self</span>):
+                        <span class="keyword">return</span><span class="keyword"> self</span>.side**2      
+                <span class="comment"># Using polymorphism</span>   
+                circle = Circle(5)
+                square = Square(4)
+                shapes = [circle, square]
+                <span class="keyword">for</span> shape <span class="keyword">in</span> shapes:
+                    <span class="keyword">print</span>(f<span class="string">"Area of {shape.__class__.__name__}: {shape.area()}"</span>)
+                </code></pre>
+            </div>
+
+            <p>
+                This example demonstrates polymorphism, as both Circle and Square can be treated as instances of the common 
+                interface Shape. The area method is overridden in each subclass, providing specific implementations.<br>
+                Object-Oriented Programming provides a powerful and organized way to design and structure code, enhancing code 
+                readability, maintainability, and reusability. 
+            </p>    
+
+            <div id="quiz-section">
+                <h2>Quiz</h2>
+                <div id="questions-container">
+                    <!-- Questions will be loaded here by JavaScript -->
+                </div>
+                <form action="http://localhost:3000/topic/OOPP">
+                    <button type="submit" id="attempt-quiz">Attempt Quiz</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>    
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Aptara. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    </script>
+</body>
+</html>
